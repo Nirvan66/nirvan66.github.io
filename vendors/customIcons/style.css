@@ -1,0 +1,173 @@
+@font-face {
+  font-family: 'customIcons';
+  src:  url('fonts/customIcons.eot?q8qydf');
+  src:  url('fonts/customIcons.eot?q8qydf#iefix') format('embedded-opentype'),
+    url('fonts/customIcons.ttf?q8qydf') format('truetype'),
+    url('fonts/customIcons.woff?q8qydf') format('woff'),
+    url('fonts/customIcons.svg?q8qydf#customIcons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="custicon-"], [class*=" custicon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'customIcons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.custicon-epg:before {
+  content: "\e90c";
+}
+.custicon-Qualcomm-Logo:before {
+  content: "\e90d";
+}
+.custicon-qualcomm:before {
+  content: "\e90e";
+}
+.custicon-curate:before {
+  content: "\e90f";
+}
+.custicon-manipal-logo:before {
+  content: "\e90b";
+}
+.custicon-waving-hand-icon:before {
+  content: "\e90a";
+}
+.custicon-ai-icon:before {
+  content: "\e902";
+}
+.custicon-brain:before {
+  content: "\e903";
+}
+.custicon-neural-net:before {
+  content: "\e904";
+}
+.custicon-nlp:before {
+  content: "\e906";
+}
+.custicon-nlp-icon:before {
+  content: "\e907";
+}
+.custicon-dist-sys:before {
+  content: "\e908";
+}
+.custicon-msoe:before {
+  content: "\e900";
+}
+.custicon-boulder:before {
+  content: "\e901";
+}
+.custicon-pencil:before {
+  content: "\e905";
+}
+.custicon-pencil2:before {
+  content: "\e909";
+}
+.custicon-music:before {
+  content: "\e911";
+}
+.custicon-play:before {
+  content: "\e912";
+}
+.custicon-pacman:before {
+  content: "\e916";
+}
+.custicon-bullhorn:before {
+  content: "\e91a";
+}
+.custicon-book:before {
+  content: "\e91f";
+}
+.custicon-library:before {
+  content: "\e921";
+}
+.custicon-folder-open:before {
+  content: "\e930";
+}
+.custicon-coin-dollar:before {
+  content: "\e93b";
+}
+.custicon-display:before {
+  content: "\e956";
+}
+.custicon-mobile:before {
+  content: "\e958";
+}
+.custicon-drawer:before {
+  content: "\e95c";
+}
+.custicon-drawer2:before {
+  content: "\e95d";
+}
+.custicon-floppy-disk:before {
+  content: "\e962";
+}
+.custicon-drive:before {
+  content: "\e963";
+}
+.custicon-database:before {
+  content: "\e964";
+}
+.custicon-bubbles2:before {
+  content: "\e96d";
+}
+.custicon-bubbles4:before {
+  content: "\e970";
+}
+.custicon-users:before {
+  content: "\e972";
+}
+.custicon-tree:before {
+  content: "\e9bc";
+}
+.custicon-cloud:before {
+  content: "\e9c1";
+}
+.custicon-cloud-check:before {
+  content: "\e9c4";
+}
+.custicon-earth:before {
+  content: "\e9ca";
+}
+.custicon-eye:before {
+  content: "\e9ce";
+}
+.custicon-smile:before {
+  content: "\e9e1";
+}
+.custicon-volume-high:before {
+  content: "\ea26";
+}
+.custicon-facebook:before {
+  content: "\ea90";
+}
+.custicon-instagram:before {
+  content: "\ea92";
+}
+.custicon-onedrive:before {
+  content: "\eaaf";
+}
+.custicon-github:before {
+  content: "\eab0";
+}
+.custicon-appleinc:before {
+  content: "\eabe";
+}
+.custicon-android:before {
+  content: "\eac0";
+}
+.custicon-reddit:before {
+  content: "\eac6";
+}
+.custicon-linkedin:before {
+  content: "\eac9";
+}

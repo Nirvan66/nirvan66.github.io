@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/log.png" type="image/png">
+        <title>Weather Monitor</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+        
+        <!--================Header Menu Area =================-->
+        <!--================Header Menu Area =================-->
+        
+        <!--================Home Banner Area =================-->
+
+        <!--================End Home Banner Area =================-->
+        
+        <!--================Portfolio Details Area =================-->
+        <section class="portfolio_details_area p_120"  style="background: #f9f9ff; padding-bottom: 50px;">
+            <div class="container">
+                <div class="portfolio_details_inner">
+                    <div class="row">
+                        <div class="left_img"">
+                            <img class="img-fluid" src="img/weatherMonitor/icon.png" alt="WM" style="height: 350px; padding-right: 30px;">
+                        </div>
+                        <div class="col-md-6">
+                            <div style="padding-left: 0px;" class="portfolio_right_text">
+                                <h4>Weather Monitor</h4>
+                                <p> The goal of this project was to impliment basic android development concepts in creating a weather application. The weather application allowed the user to view weather conditions in any one of the fifty states. The basic concepts of andriod development explored in the project were setting up basic UI componets, creating a background <a href="https://developer.android.com/training/run-background-service/create-service#java">service</a> to query the <a href="https://openweathermap.org/api">open weather API</a> and rendering querying data graphically using <a href="https://github.com/PhilJay/MPAndroidChart/tree/master/MPChartLib/src/main/java/com/github/mikephil/charting"> MPAndroidChart</a> to create an asthetically apealing application.</p>
+                                <ul class="list">
+                                    <li><span>Time period</span>: April 2018</li>
+                                    <li><span>Project Type</span>:  Class Project</li>
+                                    <li><span>Github</span>:  <a href="https://github.com/Nirvan66/Weather-Monitor"> Weather Monitor</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio_details_area p_120" style="padding-top: 50px;">
+            <div class="container">
+                <h4 style="color: #222222; margin-bottom:40px; font-size: 30px; text-align: center;">Project Overview</h4>
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Designed the user interface for selecting and rendering weather data</h3>
+                        <img src="img/iris/mobileNet.png" style="margin-left: auto; margin-right: auto; display: block; height: 100px; float: right;" alt="">
+                        <p style="padding-bottom: 10px;">The first part of the UI was the spinner that was used to select one of the fifty states. The second part of the UI was a list of weather attributes for the selected state at that particular time. The third UI attribute was a spinner used to select a specific weather attribute to see the five day forecast. The fourth attribute was a line graph created using <a href="https://github.com/PhilJay/MPAndroidChart/tree/master/MPChartLib/src/main/java/com/github/mikephil/charting"> MPAndroidChart</a>. The line graph rendered the five day forecast with data points at every three hours of the attribute selected for a specific state. The x-axis of the line graph representend the time and the y-axis of the represented the units of either Humidity (%), Pressure (hPa), Temperature (℃) or Wind Speed (km/h). </p>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color"> Constructed a service to collect weather data using an API call.</h3>
+                        <img src="img/weatherMonitor/json.png" style="height: 300px; padding-bottom: 10px; float: right; padding-right: 30px; padding-left: 30px" alt="">
+                        <p>An <a href="https://developer.android.com/training/run-background-service/create-service#java"> IntentService</a> was created to query the <a href="https://openweathermap.org/api">open weather API</a> for weather information regarding a specific state. An intent was used to send the name of the state the user selected from the main activity to the service. The service had an intent handeler that used the name of the city sent to query the open weather map API to get weather data in JSON format. The JSON data consisting of the 5 day weather forecast with data points at 3 hour intervals was parsed and and extracted into another intent by the service. The data was then sent using the intent from the service to the main activity. The main activity populated the current weather list and forecast graph with the 5 day / 3 hour weather data. </p>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Development was done in Android Studios using JAVA. </h3>
+                        <ul style="list-style: none;">
+                            <li><img src="img/epg/visual_studio.jpg" style="height: 150px; float: left;" alt=""></li>
+                            <li><img src="img/epg/csh.png" style="height: 150px; float: left; padding-left: 10px;" alt=""></li>
+                            <li><img src="img/epg/xaml.jpg" style="height: 150px; float: left; padding-left: 10px;" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--================End Portfolio Details Area =================-->
+        
+        <!--================Footer Area =================-->
+        
+        <!--================End Footer Area =================-->
+        
+        
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="vendors/isotope/isotope-min.js"></script>
+        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/mail-script.js"></script>
+        <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+        <script src="vendors/counter-up/jquery.counterup.min.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/log.png" type="image/png">
+        <title>Qualcomm</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+        
+        <!--================Header Menu Area =================-->
+        <!--================Header Menu Area =================-->
+        
+        <!--================Home Banner Area =================-->
+
+        <!--================End Home Banner Area =================-->
+        
+        <!--================Portfolio Details Area =================-->
+        <section class="portfolio_details_area p_120"  style="background: #f9f9ff; padding-bottom: 50px;">
+            <div class="container">
+                <div class="portfolio_details_inner">
+                    <div class="row">
+                        <div class="left_img"">
+                            <img class="img-fluid" src="img/qualcomm/qualcomm.jpg" alt="Qualcomm" style="height: 350px; padding-right: 30px;">
+                        </div>
+                        <div class="col-md-6">
+                            <div style="padding-left: 0px;" class="portfolio_right_text">
+                                <h4>Qualcomm</h4>
+                                <p><a href="https://www.qualcomm.com/">Qualcomm Inc</a> works on a broad array of technology focused in the field of telecommunications. The Qualcomm Snapdragon LTE modems are a series of 4G LTE, LTE Advanced and LTE Advanced Pro modems found in many phones, tablets, laptops, watches and even cars. The summer internship project involved building a profiling tool for the 4G LTE team to collect and effectively render code performance data which helped identify bottlenecks in the codebase.</p>
+                                <ul class="list">
+                                    <li><span>Time period</span>:  June 2017 - September 2017</li>
+                                    <li><span>Location</span>:  Boulder, CO</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio_details_area p_120" style="padding-top: 50px;">
+            <div class="container">
+                <h4 style="color: #222222; margin-bottom:40px; font-size: 30px; text-align: center;">Software Engineering Intern</h4>
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color"> Worked with the 4G LTE team to build a code performance data collection API</h3>
+                        <ul style="float: right; list-style: none;">
+                            <li><img src="img/qualcomm/hex.png" style="height: 142px;" alt=""></li>
+                            <li><img src="img/qualcomm/marker.png" style="height: 169px; padding-top: 10px" alt=""></li>
+                        </ul>
+                        <p>The 4G LTE team required a tool to collect data regarding the number of instructions executed by certain blocks of code during a single run. Such a tool would help identify bottlenecks in the codebase. Unlike regular processors that execute one instruction per clock cycle, <a href="https://en.wikipedia.org/wiki/Qualcomm_Hexagon">Qualcomm's Hexagon</a> executes multiple instructions in one clock cycle. This set of instructions executed per clock cycle is called a Packet. A profiling API was built in C to collect data regarding packet count during code execution.</p>
+                        <p style="padding-top: 15px;">The packet count profiling API allowed a user to collect data regarding the number of packets executed by a certain block of code by placing start and end markers certain points in the codebase. To differentiate markers at one section of code from another, markers at each chunk of code were given specific event ids. The markers we're added to the code base before execution by the user in the form of function calls to the packet count profiling API. The profiler was made more versatile by giving it the ability to collect not just packet count data but also other performance related data such as timestamps, clock cycles, clock frequency etc.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Collected test profiling data logs by profiling code base run on mobile device-base station network</h3>
+                        <img src="img/qualcomm/ue.jpg" style="height: 150px; float: right;" alt="">
+                        <p>The profiling API was designed to dump the profiling data logs into timestamped files when running code with profiling markers. To test data log collection, the code was flashed onto a test mobile device and the device with the profiling tool was run on a test base station network. Data logs were collected from test run in the form of timestamped DLF (diagnostic log files). <a href="https://jenkins.io/">Jenkins</a> was used for continuous integration and build automation while testing profiler tool on the code base.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Parsed and effectively rendered profiling data logs in graphical and tabular format</h3>
+                        <ul style="float: right; list-style: none;">
+                            <li><img src="img/qualcomm/gannt.png" style="height: 200px;" alt=""></li>
+                            <li><img src="img/qualcomm/table.png" style="height: 250px; padding-top: 10px; " alt=""></li>
+                        </ul>
+                        <p>The data log files collected were parsed and rendered using a <a href="https://docs.microsoft.com/en-us/cpp/build/dlls-in-visual-cpp?view=vs-2019">DLL (dynamic-link library)</a> executable written in C++. The DLL executable was run on <a href="https://www.qualcomm.com/media/documents/files/qxdm-professional-qualcomm-extensible-diagnostic-monitor.pdf">QXDM</a> which is a diagnostic client for rapid prototyping of data log packets. QXDM's graphical user interface was used to display transmitted data in graphical and tabular formats. The data was graphically rendered using a modified gannt chart that displayed stats regarding each event. A gannt charts usually show the dependency relationships between activities and current schedule status. The schedule status (x-axis) of the gannt chart represents the number of packets that have been executed by the Hexagon processor. The activities (y-axis) of the gannt chart represents name of the event that is monitoring a particular code block. Each bar of the gannt chart represents the packet count at the start and end point of its corresponding event.</p>
+
+                        <p style="padding-top: 15px">The profiling data was also rendered in tabular format. The events were listed in the table in chronological order of occurrence. Each row of the table represented the start or end marker of an events monitoring various code blocks. Each column represented various attributes of an event marker. The columns presented data regarding packet count, clock cycles and clock frequency etc. of a particular event marker respectively. </p>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color"> The Profiling API was written in C. The DLL executable file used for parsing and effectively rendering data logs was written in C++. Jenkins was used for continuous integration and Perforce was used for version control.</h3>
+                        <ul style="list-style: none;">
+                            <li><img src="img/qualcomm/c.jpg" style="height: 150px; float: left; padding-left: 250px;" alt=""></li>
+                            <li><img src="img/qualcomm/jenkins.jpg" style="height: 150px; float: left; padding-left: 100px;" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--================End Portfolio Details Area =================-->
+        
+        <!--================Footer Area =================-->
+        
+        <!--================End Footer Area =================-->
+        
+        
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="vendors/isotope/isotope-min.js"></script>
+        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/mail-script.js"></script>
+        <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+        <script src="vendors/counter-up/jquery.counterup.min.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>
