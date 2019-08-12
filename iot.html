@@ -60,7 +60,7 @@
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
                         <h3 style="" class="mb-30 title_color">Devised data collection and transmission subsystems of buoy prototype based on detailed system requirements.</h3>
                         <p style="padding-bottom: 10px;">The data sampled by each sensor had to be collected and transmitted to an onshore base station under ceratin operating parameters. The buoy had to transmmit 10 timestamped data samples every hour with a maximum individual packet size of one kilobyte over a maximum distance of 1 mile. To account for failure or curruption during data transmission, a copy of each data sample over a period of 6 months had to be stored on the buoy. Due to operation time of 6 months, the buoy had to power frugal and so a low power consumption data transmission solution was required. After conducting technology investigation, the two data transmission technologies considered were <a href="https://en.wikipedia.org/wiki/Wi-Fi">WiFi</a> and <a href="https://en.wikipedia.org/wiki/Zigbee">Zigbee</a>. For the IoT buoy application, which required a low power and larger range network  solution that sends small packets on sensor data from peripherals to a base station, ZigBee seemed like a better solution than WiFi.  To store 4464 data log entries over a period of 6 months a simple microSD card solution was chosen. The <a href="https://www.mouser.com/datasheet/2/111/ds_xbeepro900hp-1374851.pdf">Xbee pro module</a> was chosen as it uses the  802.15.4 (ZigBee) communication protocol and offers a power efficient outdoor line of site range of 2 miles. The Xbee pro module was also compatible with the Arduino mini which was choosen as the microcontroller for the project. For more details about system requirements and technology investigation, refer to section 2 and 3 of the <a href="">documentation</a>.</p>
-                        <img src="img/iotBuoy/xbee.png" style="margin-left: auto; margin-right: auto; display: block; height: 200px;" alt="">
+                        <img src="img/iotBuoy/xbee.PNG" style="margin-left: auto; margin-right: auto; display: block; height: 200px;" alt="">
 
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                         <h3 style="" class="mb-30 title_color">Designed and configured zigbee network for sensor data transmission</h3>
                         <ul style="list-style: none; float: right;">
                             <li><img src="img/iotBuoy/star.png" style="height: 150px; padding-bottom: 10px;" alt=""></li>
-                            <li><img src="img/iotBuoy/xctu.png" style="height: 300px; padding-top: 40px;" alt=""></li>
+                            <li><img src="img/iotBuoy/xctu.PNG" style="height: 300px; padding-top: 40px;" alt=""></li>
                         </ul>
                         <p>A ZigBee network is made of three types of node. All ZigBee networks must have a coordinator node. This node is tasked with setting up the network along with all the addressing required for other nodes to join the network. The coordinator must constantly listen for data frames from routers and end devices. Routers can transmit their own data and relay data from other devices. End devices are routers that do not relay data. As end device/coordinator combination already provided the required distance of 2 miles routers were not used for this implementation and a star network configuration was chosen.</p>
 
@@ -82,8 +82,8 @@
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
                         <h3 style="" class="mb-30 title_color">Constructed and transmitted data frames form end devices to coordinator over zigbee network.</h3>
                         <ul style="list-style: none; float: right;">
-                            <li><img src="img/iotBuoy/transmit.png" style="height: 300px;" alt=""></li>
-                            <li><img src="img/iotBuoy/sdcard.png" style="height: 300px; padding-top: 40px;" alt=""></li>
+                            <li><img src="img/iotBuoy/transmit.PNG" style="height: 300px;" alt=""></li>
+                            <li><img src="img/iotBuoy/sdcard.PNG" style="height: 300px; padding-top: 40px;" alt=""></li>
                         </ul>
                         <p style="padding-bottom: 10px;"> There are many frames that can sent over the ZigBee network, but the IoT Buoy requires the consideration of two frame types, the transmit request and the receve frame.All transmitted packets start with 0x7E followed by the length and frame details. The 64-bit address indicated the device that the frame must be transmitted to. The checksum helps validate correctness of the packet on receiver.For more information regarding data frame structure refer to pg 116 of the <a href="https://www.digi.com/resources/documentation/digidocs/PDFs/90000976.pdf">XBee Pro Module manual</a>.</p>
 
@@ -98,9 +98,9 @@
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
                         <h3 style="" class="mb-30 title_color">Used python scripts to parse, render and save incoming data frames.</h3>
 
-                        <img src="img/iotBuoy/frames.png" style="height: 200px; padding-left: 10px; float: right;" alt="">
+                        <img src="img/iotBuoy/frames.PNG" style="height: 200px; padding-left: 10px; float: right;" alt="">
                         <p style="padding-bottom: 10px;">The coordinator is connected to a serial port on a computer through which frame data comes in the form of a bit stream. Just like the transmit frame data, the receive frame data starts address with a 0x7E. This can be used to separate string of frame. The 64-bit source address or the 16-bit source network can be used to uniquely identify the XBee Pro Module from which the frame was received.For more information regarding data frame structure refer to pg 116 of the <a href="https://www.digi.com/resources/documentation/digidocs/PDFs/90000976.pdf">XBee Pro Module manual</a>. The data itself was packaged the format of timestamp followed by two temperature readings from the two sensors followed by luminosity and then turbitity. The final value was the buoy ID number that helped identify the buoy sending the data. Once the frames are parsed and sensor data is extracted it is plotted as a live graph using a python script. Changes in each sensor could be monitored in real time using the three graphs. The data was also saved onto a csv file for future research.</p>
-                        <img src="img/iotBuoy/pyth.png" style="margin-left: auto; margin-right: auto; display: block; height: 300px;" alt="">
+                        <img src="img/iotBuoy/pyth.PNG" style="margin-left: auto; margin-right: auto; display: block; height: 300px;" alt="">
 
                     </div>
                 </div>
