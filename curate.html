@@ -39,7 +39,7 @@
                         <div class="col-md-6">
                             <div style="padding-left: 0px;" class="portfolio_right_text">
                                 <h4>Curate Solutions</h4>
-                                <p><a href="https://www.curatesolutions.com/">Curate Solutions </a>scrapes through minutes and agenda documents from local meetings of hundereds of counties across the country each week. The Madison based startup scans through the collected data using a mixture of machine learning/language processing models and a human data analysis team to retrive information valuable to customers. Customers may include construction companies looking for new projects to bid on etc. During my time at the company, I worked on building and training machine learning models on large scale textual datasets to extract data valuable to customers.</p>
+                                <p><a href="https://www.curatesolutions.com/">Curate Solutions </a>scrapes through minutes and agenda documents from local meetings of hundereds of counties across the country each week. The Madison based startup scans through the collected data using a mixture of machine learning/language processing models and a human data analysis team to retrive information valuable to customers. Customers may include construction companies looking for new projects to bid on etc. During my time at the company, I worked on building, training and deploying machine learning models on large scale textual datasets to extract data valuable to customers.</p>
                                 <ul class="list">
                                     <li><span>Time period</span>:  May 2018 - May 2019</li>
                                     <li><span>Location</span>:  Madison, WI</li>
@@ -55,17 +55,59 @@
                 <h4 style="color: #222222; margin-bottom:40px; font-size: 30px; text-align: center;">Software Engineer</h4>
                 <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
-                        <h3 style="" class="mb-30 title_color">Used spaCy for per-processing and word vectorization.</h3>
-                        <img src="img/curate/word2vec.png" style="float: right; height: 250px; padding-left:30px;" alt="W2V">
-                        <p>One of the fundamental challenges in using machine learning on textual data was converting this data into a machine readable numeric format. To do this each word was converted to a 300 dimensinal vector using the pre trained <a href="https://nlp.stanford.edu/projects/glove/">GloVe vectors</a>. GloVe vectors are created using the unsupervise <a href="https://arxiv.org/pdf/1310.4546.pdf">word2vec</a> learning algorithm. This algorithm uses the continuous skipGram architecture to predict the window of context words around a specific pivot word. This is done by taking a corpus of textual data and assigning each word a random 300 dimensional vector. Then a window size is chosen and every word in the window is used to predict the neighbouring words. A <a href="https://arxiv.org/pdf/1411.2738.pdf">neural network</a> is used for the prediction task in which backpropagation is used for training. By doing this, words that occur in similar contexts or close to each other end up getting placed close to one another in vector space. <a href="https://spacy.io/">spaCy</a> provides a way to <a href="https://spacy.io/usage/vectors-similarity">efficently impliment word2vec</a> along with many more language processing functions such as tokenization, lemmatization, part of speech tagging etc. and was thus used to convert text data into 300 dimensional word vectors in production. </p>
+                        <h3 style="" class="mb-30 title_color">Used spaCy for per-processing and word vectorization of textual data.</h3>
+                        <ul style="list-style: none; float: right;">
+                            <li><img src="img/curate/word2vec.png" style="height: 220px;" alt="W2V"></li>
+                            <li><img src="img/curate/skipGram.png" style="height: 400px; padding-top: 50px; padding-left: 55px; " alt="SKIPgRAM"></li>
+                        </ul>
+                        <p>One of the fundamental challenges in using machine learning on textual data was converting this data into a machine readable numeric format. To do this each word was converted to a 300 dimensinal vector using the pre trained <a href="https://nlp.stanford.edu/projects/glove/">GloVe vectors</a>. GloVe vectors are created using the unsupervise <a href="https://arxiv.org/pdf/1310.4546.pdf">word2vec</a> learning algorithm. This algorithm uses the continuous skipGram architecture to predict the window of context words around a specific pivot word. This is done by taking a corpus of textual data and assigning each word a random 300 dimensional vector. Then a window size is chosen and every word in the window is used to predict the neighbouring words. A <a href="https://arxiv.org/pdf/1411.2738.pdf">neural network</a> is used for the prediction task in which backpropagation is used for training. By doing this, words that occur in similar contexts or close to each other end up getting placed close to one another in vector space.</p>
+
+                        <p style="padding-top: 10px;"><a href="https://spacy.io/">spaCy</a> provides a way to <a href="https://spacy.io/usage/vectors-similarity">efficently impliment word2vec</a> along with many more language processing functions such as tokenization, lemmatization, part of speech tagging etc. and was thus used to convert text data into 300 dimensional word vectors in production. The pre trained 300 dimensional spaCy GloVe vectors were improved on by conducting furthur training using a custom corpus of textual data. This was done with the help of <a href="https://radimrehurek.com/gensim/models/word2vec.html">Gensim</a> which uses the word2vec skipGram technique as discussed above to train word vectors for a corpus of data. But instead of using random vectors to initialize training as discussed above, the pre trained 300 dimensional spaCy GloVe vectors were used to initialize each word vector in the corpus. The corpus was then trained using the word2vec skipGram technique which resulted in word vectors that better represented the contexts of the corpus it was trained on.</p>
                     </div>
                 </div>
 
                 <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
-                        <h3 style="" class="mb-30 title_color">Trained and deployed a URL classifier to find valuable links.</h3>
+                        <h3 style="" class="mb-30 title_color">Trained and deployed a URL classifier to find valuable minutes and agenda webpages.</h3>
+                        <img src="" style="float: right; height: 200px;" alt="COMING SOON">
+                        <p>The first step of the entire data gathering system involved finding the right webpages (urls) to scrape. A dataset of urls containing minutes and agenda data vs ones that do not (good vs bad urls) was used used to build a binary classifier. To identify the parts of the url that could be used as input variables, the good and bad urls were analysed using basic data science related statistical analysis techniques. The resulting analysis showed that the protocol and domain name sections of the url did not help in differentiating good vs bad urls. These sections of the urls were removed in pre processing and only the path section of the url was used as an input variable for the binary classifier. As an additional data scrubbing step, the path portion of the url furthur pre processed usign certain spaCy tools and various <a href="https://docs.python.org/3/library/re.html">regular expressions</a>. The data was then vectorised using pre trained 300 dimensional spacy word GloVe vectors which were customized by further training of the entire url corpus using gensim. </p>
+
+                        <p style="padding-top: 10px;">Once input vectors creation method was ready, the best <a href="https://scikit-learn.org/stable/supervised_learning.html">scikit binary classifier</a> with the right hyperparameters had to be chosen. This was done by running a grid search across multiple models with varying hyperparameters. Training and testing the list of viable models was done using <a href="https://spark.apache.org/docs/latest/running-on-kubernetes.html">kubernetes running apache spark.</a> The models with their corresponding hyperparameters were split up by the kubernetes driver pod into a list of jobs distrubuted among available excecutor pods. Each executor pod retrived labeled url data stored in <a href="https://www.mongodb.com/">mongoDB</a>, vectorized the url data using customized spaCy 300 dimension vectors, used a traning set of data to train a single model and used a test set of the data to generate precision recall scores. The hyperparameters of models with the top 10 percision recall scores were saved. Scikit's adaboost classifier was found to give the best result and was trained using a spark-kubernetes framework. The kubernetes driver pod split up the training data into jobs and each executor pod partialy trained the adaboost classifier on a single portion of data. The fully trained models were stored in <a href="https://aws.amazon.com/s3/">AWS S3 buckets</a> along with metadata related to the model.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Trained and deployed classifier to eliminate syntactic junk data.</h3>
                         <img src="" style="float: right; height: 200px;" alt="COMING SOON">
                         <p></p>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Trained and deployed classifier to eliminate semantic junk data.</h3>
+                        <img src="" style="float: right; height: 200px;" alt="COMING SOON">
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Trained and deployed classifer to extract datapoints valuable to customers.</h3>
+                        <img src="" style="float: right; height: 200px;" alt="COMING SOON">
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Development was done in a .NET framework on Microsoft Visual Studio. While the backbone of the heatmap layer was written in C#, XAML was used to render the visual component.</h3>
+                        <ul style="list-style: none;">
+                            <li><img src="img/epg/visual_studio.jpg" style="height: 150px; float: left;" alt=""></li>
+                            <li><img src="img/epg/csh.png" style="height: 150px; float: left; padding-left: 10px;" alt=""></li>
+                            <li><img src="img/epg/xaml.jpg" style="height: 150px; float: left; padding-left: 10px;" alt=""></li>
+                        </ul>
                     </div>
                 </div>
 
