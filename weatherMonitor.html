@@ -39,7 +39,7 @@
                         <div class="col-md-6">
                             <div style="padding-left: 0px;" class="portfolio_right_text">
                                 <h4>Weather Monitor</h4>
-                                <p> The goal of this project was to impliment basic android development concepts in creating a weather application. The weather application allowed the user to view weather conditions in any one of the fifty states. The basic concepts of andriod development explored in the project were setting up basic UI componets, creating a background <a href="https://developer.android.com/training/run-background-service/create-service#java">service</a> to query the <a href="https://openweathermap.org/api">open weather API</a> and rendering querying data graphically using <a href="https://github.com/PhilJay/MPAndroidChart/tree/master/MPChartLib/src/main/java/com/github/mikephil/charting"> MPAndroidChart</a> to create an asthetically apealing application.</p>
+                                <p> The goal of this project was to implement basic android development concepts in creating a weather application. The weather application allowed the user to view weather conditions in any one of the fifty states. The concepts of android development explored in the project were setting up basic UI components, creating a background <a href="https://developer.android.com/training/run-background-service/create-service#java">service</a> to query the <a href="https://openweathermap.org/api">open weather API</a> and rendering queried data graphically using <a href="https://github.com/PhilJay/MPAndroidChart/tree/master/MPChartLib/src/main/java/com/github/mikephil/charting"> MPAndroidChart</a> to create an aesthetically appealing application.</p>
                                 <ul class="list">
                                     <li><span>Time period</span>: April 2018</li>
                                     <li><span>Project Type</span>:  Class Project</li>
@@ -55,29 +55,32 @@
         <section class="portfolio_details_area p_120" style="padding-top: 50px;">
             <div class="container">
                 <h4 style="color: #222222; margin-bottom:40px; font-size: 30px; text-align: center;">Project Overview</h4>
-                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
-                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
-                        <h3 style="" class="mb-30 title_color">Designed the user interface for selecting and rendering weather data</h3>
-                        <img src="img/iris/mobileNet.png" style="margin-left: auto; margin-right: auto; display: block; height: 100px; float: right;" alt="">
-                        <p style="padding-bottom: 10px;">The first part of the UI was the spinner that was used to select one of the fifty states. The second part of the UI was a list of weather attributes for the selected state at that particular time. The third UI attribute was a spinner used to select a specific weather attribute to see the five day forecast. The fourth attribute was a line graph created using <a href="https://github.com/PhilJay/MPAndroidChart/tree/master/MPChartLib/src/main/java/com/github/mikephil/charting"> MPAndroidChart</a>. The line graph rendered the five day forecast with data points at every three hours of the attribute selected for a specific state. The x-axis of the line graph representend the time and the y-axis of the represented the units of either Humidity (%), Pressure (hPa), Temperature (℃) or Wind Speed (km/h). </p>
-                    </div>
-                </div>
 
                 <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
-                        <h3 style="" class="mb-30 title_color"> Constructed a service to collect weather data using an API call.</h3>
+                        <h3 style="" class="mb-30 title_color"> Constructed a service to collect weather data using an API call</h3>
                         <img src="img/weatherMonitor/json.PNG" style="height: 300px; padding-bottom: 10px; float: right; padding-right: 30px; padding-left: 30px" alt="">
-                        <p>An <a href="https://developer.android.com/training/run-background-service/create-service#java"> IntentService</a> was created to query the <a href="https://openweathermap.org/api">open weather API</a> for weather information regarding a specific state. An intent was used to send the name of the state the user selected from the main activity to the service. The service had an intent handeler that used the name of the city sent to query the open weather map API to get weather data in JSON format. The JSON data consisting of the 5 day weather forecast with data points at 3 hour intervals was parsed and and extracted into another intent by the service. The data was then sent using the intent from the service to the main activity. The main activity populated the current weather list and forecast graph with the 5 day / 3 hour weather data. </p>
+                        <p>An <a href="https://developer.android.com/training/run-background-service/create-service#java"> IntentService</a> was created to query the <a href="https://openweathermap.org/api">open weather API</a> for weather information regarding a specific state. An intent was used to send the name of the state the user selected from the main activity to the service. The service had an intent handler that used the name of the city selected to query the open weather map API to get weather data in JSON format. The JSON data consisted of the 5-day weather forecast with data points at 3-hour intervals. This data was parsed and extracted into another intent by the service. The data was then sent using the intent from the service to the main activity. The main activity populated the current weather list and forecast graph with the 5 day / 3 hour weather data. </p>
                     </div>
                 </div>
 
                 <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
-                        <h3 style="" class="mb-30 title_color">Development was done in Android Studios using JAVA. </h3>
+                        <video autoplay loop muted style="float: right; height: 450px; padding-left: 30px; padding-right: 60px;">
+                          <source src="img/weatherMonitor/wm.mp4" type="video/mp4" />
+                        </video>
+                        <h3 style="" class="mb-30 title_color">Designed the user interface for selecting and rendering weather data</h3>
+                        <p style="padding-bottom: 10px;">The first part of the UI was the spinner that was used to select one of the fifty states. The second part of the UI was a list of weather attributes for the selected state. The third UI attribute was a spinner used to select a specific weather attribute to see the five-day forecast. The fourth attribute was a line graph created using <a href="https://github.com/PhilJay/MPAndroidChart/tree/master/MPChartLib/src/main/java/com/github/mikephil/charting"> MPAndroidChart</a>. The line graph rendered the five-day forecast with data points at every three hours of the attribute selected for a specific state. The x-axis of the line graph represented the time and the y-axis represented the units of either Humidity (%), Pressure (hPa), Temperature (℃) or Wind Speed (km/h). </p>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Development was done in Android Studios using JAVA. The open weather maps API was used queried to obtain weather data. </h3>
                         <ul style="list-style: none;">
-                            <li><img src="img/epg/visual_studio.jpg" style="height: 150px; float: left;" alt=""></li>
-                            <li><img src="img/epg/csh.png" style="height: 150px; float: left; padding-left: 10px;" alt=""></li>
-                            <li><img src="img/epg/xaml.jpg" style="height: 150px; float: left; padding-left: 10px;" alt=""></li>
+                            <li><img src="img/iris/android.jpg" style="height: 150px; float: left;" alt=""></li>
+                            <li><img src="img/weatherMonitor/owm.png" style="height: 150px; float: left; padding-left: 30px;" alt=""></li>
+                            <li><img src="img/iris/java.png" style="height: 150px; float: left; padding-left: 30px;" alt=""></li>
                         </ul>
                     </div>
                 </div>

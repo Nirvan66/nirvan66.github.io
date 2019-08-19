@@ -39,10 +39,11 @@
                         <div class="col-md-6">
                             <div style="padding-left: 0px;" class="portfolio_right_text">
                                 <h4>Iris</h4>
-                                <p>Iris is a object detection and image recognition android application. The app was a month long, self assigned class project for the Intro to Mobile Application Development course. The goal of the project was to impliment all the concepts learnt over the course, along with a machine learning component as a personal goal. The application uses two machine learning model, one for object detection and one for image recognition. The models are pre trained <a href="https://www.tensorflow.org/lite/models/object_detection/overview">Tensor Flow Lite's</a> Convolutional Neural Networks that are optimized to run on a mobile device. </p>
+                                <p>Iris is an object detection and image recognition android application. The app was built as a month long, self-assigned class project for the Intro to Mobile Application Development course. The goal of the project was to implement all the mobile application development concepts learnt over the course, along with a machine learning component as a personal goal. The applications basic UI elements and use of the camera covered the mobile application development portion of the project. The applications use of two machine learning model, one for object detection and one for image recognition covered the machine learning aspect of the project. The models were pre trained <a href="https://www.tensorflow.org/lite/models/object_detection/overview">Tensor Flow Lite's</a> Convolutional Neural Networks that were optimized to run on a mobile device. </p>
                                 <ul class="list">
                                     <li><span>Time period</span>: May 2018</li>
                                     <li><span>Project Type</span>:  Class Project</li>
+                                    <li><span>Github</span>: <a href="https://github.com/Nirvan66/Iris">Project Link</a></li>
                                 </ul>
 
                             </div>
@@ -56,35 +57,39 @@
                 <h4 style="color: #222222; margin-bottom:40px; font-size: 30px; text-align: center;">Project Overview</h4>
                 <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
-                        <h3 style="" class="mb-30 title_color">Used tensor flow lite's pre trained convolutional neural net for mobile device machine learning</h3>
-                        <p style="padding-bottom: 10px;">The tensor flow lite model used has a <a href="https://arxiv.org/pdf/1512.02325.pdf">Single-Shot Multibox Detector (SSD)</a> with feature extraction head from <a href="https://arxiv.org/pdf/1704.04861.pdf">MobileNet</a>. The feature extraction part of the network is a collection of convolution blocks from another network (VGG). The outputs from the feature extraction section are fed into to the detection layer. The detection section is made up of a sequence of detection blocks, with each block having its own output that contributes to the final output of the network. Feature maps are reduced in size after each block in order to capture different scales. Each of the detection blocks has 3 branches: box generation, classification and correction of localization. The first one is responsible for cropping rectangles (boxes) of the various aspect ratios centered in regular grid nodes over the feature map. The second one is responsible for predicting the C+1 confidence scores (C for all your classes + 1 for the background) for each generated box. The third one is responsible for the fine adjustment of positions for all boxes generated. Outputs of each detection block are collected in the last layer where smart filtering of the predictions (non-maxima suppresion) happens.</p>
+                        <h3 style="" class="mb-30 title_color">Used Tensor Flow Lite's pre trained convolutional neural net for mobile device machine learning</h3>
+                        <p style="padding-bottom: 10px;">The tensor flow lite model used in the project has a <a href="https://arxiv.org/pdf/1512.02325.pdf">Single-Shot Multibox Detector (SSD)</a> with feature extraction head from <a href="https://arxiv.org/pdf/1704.04861.pdf">MobileNet</a>. The feature extraction part of the network is a collection of convolution blocks from another network (VGG). The outputs from the feature extraction section are fed into to the detection layer. The detection section is made up of a sequence of detection blocks, with each block having its own output that contributes to the final output of the network. Feature maps are reduced in size after each block in order to capture different scales. Each of the detection blocks has 3 branches: box generation, classification and correction of localization. The first one is responsible for cropping rectangles (boxes) of the various aspect ratios centered in regular grid nodes over the feature map. The second one is responsible for predicting the confidence scores for each generated box. The third one is responsible for the fine adjustment of positions for all boxes generated. Outputs of each detection block are collected in the last layer and all predictions undergo smart filtering (non-maxima suppression).</p>
                         <img src="img/iris/mobileNet.png" style="margin-left: auto; margin-right: auto; display: block; height: 300px;" alt="">
                     </div>
                 </div>
 
                 <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
-                        <img src="img/epg/epg2.jpg" style="height: 200px; padding-bottom: 10px; float: right; " alt="">
-                        <h3 style="" class="mb-30 title_color"> Implimented multiple object detection in a live video feed.</h3>
-                        <p>The tensor flow lite neural network was trained on a collection of images of twenty objects. The file containing the model along with the bounding boxes file was used to detect objects in a live video stream. One of the major problems faced was lag caused by passing each incoming video frame through the neural network. This caused significant delay in rendering the video on the mobile device. To compensate for this, every N number of frames were passed through the neural network instead of passing every frame through the neural network. The number N thus became a hyperparameter that could be tuned to adjust the delay in video stream vs the delay in object detection.</p>
+                        <video autoplay loop muted style="float: right; height: 350px; padding-left: 30px; padding-right: 60px;">
+                          <source src="img/iris/object_detection.mp4" type="video/mp4" />
+                        </video>
+                        <h3 style="" class="mb-30 title_color"> Implemented multiple object detection in a live video feed.</h3>
+                        <p>The <a href="https://www.tensorflow.org/lite/models/object_detection/overview">Tensor Flow Lite</a> neural network was trained on a collection of images of twenty objects. The file containing the model along with the bounding boxes file was used to detect objects in a live video stream. One of the major problems faced was the lag in the video feed caused by passing each incoming frame through the neural network. This caused significant delay in rendering the video on the mobile device. To compensate for this, every N number of frames were passed through the neural network instead of passing every frame through the neural network. The number N thus became a hyperparameter that could be tuned to adjust the delay in video stream vs the delay in object detection.</p>
                     </div>
                 </div>
 
                 <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
-                        <img src="img/epg/epg2.jpg" style="height: 200px; padding-bottom: 10px; float: right; " alt="">
-                        <h3 style="" class="mb-30 title_color"> Implimented single image recognition in a live video feed.</h3>
-                        <p>The neural network used for single image recognition was trained on a much larger <a href="http://cocodataset.org/#home">COCO dataset</a>. The larger dataset allowed the neural network to recognize over 1000 distinct objects. Neural network predictions were displayed in the upper corner of the video feed. Only predictions above a certain confidence score were displayed on the GUI.</p>
+                        <video autoplay loop muted style="float: right; height: 350px; padding-left: 30px; padding-right: 60px;">
+                          <source src="img/iris/image_recognition.mp4" type="video/mp4" />
+                        </video>
+                        <h3 style="" class="mb-30 title_color"> Implemented single image recognition in a live video feed.</h3>
+                        <p>The neural network used for single image recognition was trained on a much larger <a href="http://cocodataset.org/#home">COCO dataset</a>. The single image recognition was built without a bounding box file which was present in the object detection implementation. The larger dataset allowed the neural network to recognize over 1000 distinct objects. Neural network predictions were displayed in the upper corner of the video feed. Only predictions above a certain confidence score were displayed on the GUI.</p>
                     </div>
                 </div>
 
                 <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
-                        <h3 style="" class="mb-30 title_color">Development was done in Android Studios using JAVA. </h3>
+                        <h3 style="" class="mb-30 title_color">Development was done in Android Studios using JAVA. Tensor Flow was used to build the machine learning framework. </h3>
                         <ul style="list-style: none;">
-                            <li><img src="img/epg/visual_studio.jpg" style="height: 150px; float: left;" alt=""></li>
-                            <li><img src="img/epg/csh.png" style="height: 150px; float: left; padding-left: 10px;" alt=""></li>
-                            <li><img src="img/epg/xaml.jpg" style="height: 150px; float: left; padding-left: 10px;" alt=""></li>
+                            <li><img src="img/iris/android.jpg" style="height: 150px; float: left;" alt=""></li>
+                            <li><img src="img/iris/tf.png" style="height: 150px; float: left; padding-left: 30px;" alt=""></li>
+                            <li><img src="img/iris/java.png" style="height: 150px; float: left; padding-left: 30px;" alt=""></li>
                         </ul>
                     </div>
                 </div>
