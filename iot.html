@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/log.png" type="image/png">
-        <title>Iot Buoy</title>
+        <title>Lake Water Analysis Buoy</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="vendors/linericon/style.css">
@@ -33,20 +33,19 @@
             <div class="container">
                 <div class="portfolio_details_inner">
                     <div class="row">
-                        <img class="img-fluid" src="img/iotBuoy/poster.png" alt="WM" style="height: 373px;">
+                        <img class="img-fluid" src="img/iotBuoy/sys.PNG" alt="WM" style="height: 400px; padding-left: 30px;">
                         <!-- <div class="left_img"">
                             <img class="img-fluid" src="img/iotBuoy/poster.png" alt="WM" style="height: 373px; padding-right: 30px;">
                         </div> -->
                         <div class="col-md-6">
                             <div style="padding-left: 0px;" class="portfolio_right_text">
-                                <h4>Iot Buoy</h4>
-                                <p>The objective of this project was develop a low-cost buoy that would measure and log water conditions from inland lakes while following industrial standards for a project development lifecycle. The logs were then transmitted to an onshore receving station from where the data would be uploaded to a server. The project was sponsored by The Ostfalia University of  Applied Sciences in Wolfenbuttel Germany that required the data to study algae bloom patterns and predict whether the algae bloom was green or blue-green as the latter is potentially harmfull to humans and aquatic life. The buoy network was specifically being developed for Eagle Spring Lake and the specific weather conditions of the lake were taken into cosideration during development. This was a group project worked on by a team of four members with each member working on particular subsystems. I worked on the data collection and transmission subsytems.</p>
+                                <h4>Lake Water Analysis Buoy</h4>
+                                <p>The objective of this project was to develop a low-cost buoy that would measure and log water conditions from inland lakes while following industrial standards for the project development lifecycle. The logs were then transmitted to an onshore receiving station from where the data would be uploaded to a server. The project was sponsored by The Ostfalia University of Applied Sciences in Wolfenbüttel Germany that required the data to study algae bloom patterns and predict whether the algae bloom was green or blue-green as the latter is potentially harmful to humans and aquatic life. The buoy network was specifically developed for <a href="https://www.google.com/maps/place/Eagle+Spring+Lake/@42.8563998,-88.4517734,14z/data=!3m1!4b1!4m5!3m4!1s0x8805be29134055cd:0x7af533580bab7330!8m2!3d42.8564017!4d-88.4342638">Eagle Spring Lake</a> and the specific weather conditions of the lake were taken into consideration during development. This was a group project worked on by a team of four members with each member working on subsystems. I worked on the data collection and transmission subsytems.</p>
                                 <ul class="list">
                                     <li><span>Time period</span>: June 2017 - May 2018</li>
-                                    <li><span>Project Type</span>: Senior Design Project</li>
-                                    <li><span>Documentation</span>:  <a href=""> Iot Buoy</a></li>
+                                    <li><span>Project Type</span>: Senior Year Project</li>
+                                    <li><span>Documentation</span>:  <a href="https://drive.google.com/file/d/10MOG7IdzYj8D_nxm7I4Gjzm81C6Ub4kJ/view?usp=sharing"> Lake Water Analysis Buoy</a></li>
                                 </ul>
-
                             </div>
                         </div>
                     </div>
@@ -58,49 +57,49 @@
                 <h4 style="color: #222222; margin-bottom:40px; font-size: 30px; text-align: center;">Project Overview</h4>
                 <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
-                        <h3 style="" class="mb-30 title_color">Devised data collection and transmission subsystems of buoy prototype based on detailed system requirements.</h3>
-                        <p style="padding-bottom: 10px;">The data sampled by each sensor had to be collected and transmitted to an onshore base station under ceratin operating parameters. The buoy had to transmmit 10 timestamped data samples every hour with a maximum individual packet size of one kilobyte over a maximum distance of 1 mile. To account for failure or curruption during data transmission, a copy of each data sample over a period of 6 months had to be stored on the buoy. Due to operation time of 6 months, the buoy had to power frugal and so a low power consumption data transmission solution was required. After conducting technology investigation, the two data transmission technologies considered were <a href="https://en.wikipedia.org/wiki/Wi-Fi">WiFi</a> and <a href="https://en.wikipedia.org/wiki/Zigbee">Zigbee</a>. For the IoT buoy application, which required a low power and larger range network  solution that sends small packets on sensor data from peripherals to a base station, ZigBee seemed like a better solution than WiFi.  To store 4464 data log entries over a period of 6 months a simple microSD card solution was chosen. The <a href="https://www.mouser.com/datasheet/2/111/ds_xbeepro900hp-1374851.pdf">Xbee pro module</a> was chosen as it uses the  802.15.4 (ZigBee) communication protocol and offers a power efficient outdoor line of site range of 2 miles. The Xbee pro module was also compatible with the Arduino mini which was choosen as the microcontroller for the project. For more details about system requirements and technology investigation, refer to section 2 and 3 of the <a href="">documentation</a>.</p>
-                        <img src="img/iotBuoy/xbee.PNG" style="margin-left: auto; margin-right: auto; display: block; height: 200px;" alt="">
+                        <h3 style="" class="mb-30 title_color">Devised the data collection and transmission subsystems of the buoy prototype based on detailed system requirements</h3>
+                        <p style="padding-bottom: 10px;">The data sampled by each sensor had to be collected and transmitted to an onshore base station within specific operating parameters. The buoy had to transmit 10 timestamped data samples every hour with a maximum individual packet size of one kilobyte over a maximum distance of 1 mile. To account for failure or corruption during data transmission, a copy of each data sample over a single system operation period of 6 months had to be backed up on each buoy. Due to the operation time of 6 months, the buoy had to be power efficient requiring a low power consumption data transmission solution. After conducting technology investigation, the two data transmission technologies considered were <a href="https://en.wikipedia.org/wiki/Wi-Fi">WiFi</a> and <a href="https://en.wikipedia.org/wiki/Zigbee">Zigbee</a>. For the buoy application, which required a low power and larger range network solution that sends small packets of sensor data from peripheral buoys to a base station, ZigBee was found to be a better solution than WiFi.  To store 4464 data log entries over a period of 6 months a simple microSD card solution was chosen. The <a href="https://www.mouser.com/datasheet/2/111/ds_xbeepro900hp-1374851.pdf">Xbee pro module</a> was chosen as it uses the <a href="https://en.wikipedia.org/wiki/Zigbee">802.15.4 (ZigBee)</a> communication protocol and offers a power efficient outdoor line of site range of 2 miles. The Xbee pro module is also compatible with the Arduino mini which was chosen as the microcontroller for the project. For more details about system requirements and technology investigation, refer to section 2 and 3 of the <a href="https://drive.google.com/file/d/10MOG7IdzYj8D_nxm7I4Gjzm81C6Ub4kJ/view?usp=sharing">documentation</a>.</p>
+                        <img src="img/iotBuoy/xbee.PNG" style="margin-left: auto; margin-right: auto; display: block; height: 200px;" alt="XBEE">
 
                     </div>
                 </div>
 
                 <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
-                        <h3 style="" class="mb-30 title_color">Designed and configured zigbee network for sensor data transmission</h3>
-                        <ul style="list-style: none; float: right;">
-                            <li><img src="img/iotBuoy/star.png" style="height: 150px; padding-bottom: 10px;" alt=""></li>
-                            <li><img src="img/iotBuoy/xctu.PNG" style="height: 300px; padding-top: 40px;" alt=""></li>
+                        <h3 style="" class="mb-30 title_color">Designed and configured the ZigBee network for sensor data transmission</h3>
+                        <ul style="list-style: none; float: right; padding-left: 20px;">
+                            <li><img src="img/iotBuoy/star.png" style="height: 150px; padding-bottom: 10px;" alt="STAR-CONFIG"></li>
+                            <li><img src="img/iotBuoy/xctu.PNG" style="height: 300px; padding-top: 40px;" alt="XCTU"></li>
                         </ul>
                         <p>A ZigBee network is made of three types of node. All ZigBee networks must have a coordinator node. This node is tasked with setting up the network along with all the addressing required for other nodes to join the network. The coordinator must constantly listen for data frames from routers and end devices. Routers can transmit their own data and relay data from other devices. End devices are routers that do not relay data. As end device/coordinator combination already provided the required distance of 2 miles routers were not used for this implementation and a star network configuration was chosen.</p>
 
-                        <p style="padding-top: 20px;">The XCTU open source sofware was used to configure each xbee device on the zigbee network. The first step was to configure a device as a coordinator or end device. All devices on the network had to be configured to the same PAN ID to be discovered by one another. The XBee Pro Module operates in two modes namely AT and API mode. The AT or transparent mode is used to send control information from one module to another.It is a very rudimentary mode of operation which can be used to send raw data but is not very efficeint in sending data in formated packets. The API mode on the other hand is a more formatted way of sending data.It packages the data into well formatted frames and send it to a single destination device on the same network. So the devices were configured to operate in API mode. All other network configurations were set using the XCTU softwar. Please refer to section 4.5.4 of the <a href="">documentation</a> for more details. </p>
+                        <p style="padding-top: 20px;">The XCTU open source software was used to configure each Xbee device on the ZigBee network. The first step was to configure a device as a coordinator or end device. All devices on the network had to be configured to the same PAN ID to be discovered by one another. The <a href="https://www.mouser.com/datasheet/2/111/ds_xbeepro900hp-1374851.pdf">Xbee pro module</a> operates in two modes: namely AT and API mode. The AT or transparent mode is used to send control information from one module to another. It is a very rudimentary mode of operation which can be used to send raw data but is not very efficient in sending data in formatted packets. The API mode on the other hand is a more formatted way of sending data. It packages the data into well formatted frames and sends it to a single destination device on the same network. So, the devices were configured to operate in API mode. All other network configurations were set using the XCTU software. Please refer to section 4.5.4 of the <a href="https://drive.google.com/file/d/10MOG7IdzYj8D_nxm7I4Gjzm81C6Ub4kJ/view?usp=sharing">documentation</a> for more details.</p>
                     </div>
                 </div>
 
                 <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
-                        <h3 style="" class="mb-30 title_color">Constructed and transmitted data frames form end devices to coordinator over zigbee network.</h3>
-                        <ul style="list-style: none; float: right;">
-                            <li><img src="img/iotBuoy/transmit.PNG" style="height: 300px;" alt=""></li>
-                            <li><img src="img/iotBuoy/sdcard.PNG" style="height: 300px; padding-top: 40px;" alt=""></li>
+                        <h3 style="" class="mb-30 title_color">Constructed and transmitted data frames form end devices to coordinator over ZigBee network</h3>
+                        <ul style="list-style: none; float: right; padding-left: 20px;">
+                            <li><img src="img/iotBuoy/transmit.PNG" style="height: 300px;" alt="FRAME-TRANSMISSION"></li>
+                            <li><img src="img/iotBuoy/sdcard.PNG" style="height: 300px; padding-top: 40px;" alt="SD-CARD"></li>
                         </ul>
-                        <p style="padding-bottom: 10px;"> There are many frames that can sent over the ZigBee network, but the IoT Buoy requires the consideration of two frame types, the transmit request and the receve frame.All transmitted packets start with 0x7E followed by the length and frame details. The 64-bit address indicated the device that the frame must be transmitted to. The checksum helps validate correctness of the packet on receiver.For more information regarding data frame structure refer to pg 116 of the <a href="https://www.digi.com/resources/documentation/digidocs/PDFs/90000976.pdf">XBee Pro Module manual</a>.</p>
+                        <p style="padding-bottom: 10px;"> There are many frames that can sent over the ZigBee network, but this project required two frame types, the transmit request and the receive frame. All transmitted packets start with 0x7E followed by the length and frame details. The 64-bit address indicated the device that the frame must be transmitted to. The checksum helps validate correctness of the packet on receiver. For more information regarding data frame structure refer to pg. 116 of the <a href="https://www.digi.com/resources/documentation/digidocs/PDFs/90000976.pdf">XBee Pro Module manual</a>.</p>
 
-                        <p style="padding-bottom: 10px;">The function first extracts length of the string and then formats string in the form of a character array using the toCharArray function. An instance of the ZBtxRequest is used to create and send data frame. The destination address of module was set using the setAdress64 function. For the IoT Buoy, the data must send directly to the coordinator. This was done by setting address to 0x0. Next the payload was embedded into data frame using the setPayload function. The packet was sent using the sendAndWait function which is called by the instance of XBeeWithCallbacks. The function keeps trying to send the data packet for a particular number of microseconds (5000 in this case) until successful. The status of transmission is returned by the function. A zero is returned if transmission is successful.</p>
+                        <p style="padding-bottom: 10px;">The function first extracts length of the string and then formats the string in the form of a character array using the toCharArray function. An instance of the ZBtxRequest is used to create and send data frame. The destination address of module was set using the setAdress64 function. For the Buoy, the data was sent directly to the coordinator. This was done by setting address to 0x0. Next the payload was embedded into data frame using the setPayload function. The packet was sent using the sendAndWait function which is called by the instance of XBeeWithCallbacks. The function keeps trying to send the data packet for a fixed number of microseconds (5000ms in this case) until successful. The status of transmission is returned by the function. A zero is returned if transmission is successful.</p>
 
-                        <p style="padding-bottom: 10px;">Transmit frame construction is simplified to a few function calls using the <a href="https://github.com/andrewrapp/xbee-arduino">XBee-Arduino library</a>. For a more detailed description about data transmission over zigbee refer to section 4.5.5 of the <a href="">documentation</a>. The ideal scenario would involve data sampled from four different sensors one time per hour being sent right away by the Xbee module. But if there is any failure or corruption in transmitted data a redundant copy of data was stored in a MicroSD card on the buoy. </p>
+                        <p style="padding-bottom: 10px;">Transmit frame construction is simplified to a few function calls using the <a href="https://github.com/andrewrapp/xbee-arduino">XBee-Arduino library</a>. For a more detailed description about data transmission over ZigBee refer to section 4.5.5 of the <a href="https://drive.google.com/file/d/10MOG7IdzYj8D_nxm7I4Gjzm81C6Ub4kJ/view?usp=sharing">documentation</a>. The ideal scenario would involve data sampled from four different sensors one time per hour being sent right away by the Xbee module. But if there is any failure or corruption in transmitted data a redundant copy of data was stored in a MicroSD card on the buoy. </p>
 
                     </div>
                 </div>
 
                 <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
-                        <h3 style="" class="mb-30 title_color">Used python scripts to parse, render and save incoming data frames.</h3>
+                        <h3 style="" class="mb-30 title_color">Used python scripts to parse, render and save incoming data frames</h3>
 
-                        <img src="img/iotBuoy/frames.PNG" style="height: 200px; padding-left: 10px; float: right;" alt="">
-                        <p style="padding-bottom: 10px;">The coordinator is connected to a serial port on a computer through which frame data comes in the form of a bit stream. Just like the transmit frame data, the receive frame data starts address with a 0x7E. This can be used to separate string of frame. The 64-bit source address or the 16-bit source network can be used to uniquely identify the XBee Pro Module from which the frame was received.For more information regarding data frame structure refer to pg 116 of the <a href="https://www.digi.com/resources/documentation/digidocs/PDFs/90000976.pdf">XBee Pro Module manual</a>. The data itself was packaged the format of timestamp followed by two temperature readings from the two sensors followed by luminosity and then turbitity. The final value was the buoy ID number that helped identify the buoy sending the data. Once the frames are parsed and sensor data is extracted it is plotted as a live graph using a python script. Changes in each sensor could be monitored in real time using the three graphs. The data was also saved onto a csv file for future research.</p>
-                        <img src="img/iotBuoy/pyth.PNG" style="margin-left: auto; margin-right: auto; display: block; height: 300px;" alt="">
+                        <img src="img/iotBuoy/frames.PNG" style="height: 200px; padding-left: 10px; float: right;" alt="FRAMES">
+                        <p style="padding-bottom: 10px; max-width: 650px;">The coordinator module is connected to a serial port on a computer through which frame data is received in the form of a bit stream. Just like the transmit frame data, the receive frame data starts address with a 0x7E. This was used to separate on frame from another. The 64-bit source address or the 16-bit source network can be used to uniquely identify the XBee Pro Module from which the frame was received. For more information regarding data frame structure refer to pg. 116 of the <a href="https://www.digi.com/resources/documentation/digidocs/PDFs/90000976.pdf">XBee Pro Module manual</a>. Sensor data extracted from the frame consisted of the timestamp followed by two temperature readings from the two sensors followed by luminosity and turbidity readings. Once the frames were parsed and sensor data was extracted it was plotted as a live graph using a python script. Changes in each sensor could be monitored in real time using the three graphs. The data was also saved onto a csv file for future research and analysis.</p>
+                        <img src="img/iotBuoy/pyth.PNG" style="margin-left: auto; margin-right: auto; display: block; height: 400px;" alt="GRAPH">
 
                     </div>
                 </div>
@@ -108,12 +107,19 @@
 
                 <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
-                        <h3 style="" class="mb-30 title_color">Development was done in Android Studios using JAVA. </h3>
+                        <h3 style="" class="mb-30 title_color">Development was done in Arduino IDE using C/C++. Python was used to write data parsing and rendering scrips. ZigBee 802.15.4 was used for data transmission.</h3>
                         <ul style="list-style: none;">
-                            <li><img src="img/epg/visual_studio.jpg" style="height: 150px; float: left;" alt=""></li>
-                            <li><img src="img/epg/csh.png" style="height: 150px; float: left; padding-left: 10px;" alt=""></li>
-                            <li><img src="img/epg/xaml.jpg" style="height: 150px; float: left; padding-left: 10px;" alt=""></li>
+                            <li><img src="img/iotBuoy/ide.jpg" style="height: 150px; float: left;" alt=""></li>
+                            <li><img src="img/qualcomm/c.jpg" style="height: 150px; float: left; padding-left: 10px;" alt=""></li>
+                            <li><img src="img/iotBuoy/zigbee.jpg" style="height: 150px; float: left; padding-left: 10px;" alt=""></li>
+                            <li><img src="img/iotBuoy/xctu_logo.png" style="height: 150px; float: left; padding-left: 10px;" alt=""></li>
                         </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <img src="img/iotBuoy/poster.png" style="height: 870px;" alt="">
                     </div>
                 </div>
 
