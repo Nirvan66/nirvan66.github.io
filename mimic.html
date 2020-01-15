@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/log.png" type="image/png">
+        <title>Mimic</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+        
+        <!--================Header Menu Area =================-->
+        <!--================Header Menu Area =================-->
+        
+        <!--================Home Banner Area =================-->
+
+        <!--================End Home Banner Area =================-->
+        
+        <!--================Portfolio Details Area =================-->
+        <section class="portfolio_details_area p_120"  style="background: #f9f9ff; padding-bottom: 50px;">
+            <div class="container">
+                <div class="portfolio_details_inner">
+                    <div class="row">
+                        <img class="img-fluid" src="img/mimic/humanBote1.jpg" alt="WM" style="height: 400px; padding-left: 30px;">
+                        <!-- <div class="left_img"">
+                            <img class="img-fluid" src="img/iotBuoy/poster.png" alt="WM" style="height: 373px; padding-right: 30px;">
+                        </div> -->
+                        <div class="col-md-6">
+                            <div style="padding-left: 0px;" class="portfolio_right_text">
+                                <h4>Mimic: Character Based Chatbot</h4>
+                                <p>This was a group project for the Machine Learning class at University of Colorado Boulder. In this project we explored the problem of creating a chatbot that could mimic a popular television character’s personality, Joey from Friends. The dataset was extracted directly from the Friends scripts from each season to get statement response pairs for an individual character. <a href="https://keras.io/examples/lstm_seq2seq/">Encoder Decoder LSTM model </a> was built and trained on extracted statement response pairs. An inference model was then created using the trained model weights to respond to any given question.</p>
+                                <ul class="list">
+                                    <li><span>Time period</span>: October 2019 - December 2019</li>
+                                    <li><span>Project Type</span>: Group class project (CSCI 5622)</li>
+                                    <li><span>Documentation</span>:  <a href="https://drive.google.com/file/d/1igkzCGROPTibeqv5idRQdPgQNqqC2_-u/view?usp=sharing"> Mimic: Character Based Chatbot</a></li>
+                                    <li><span>Github</span>:  <a href="https://github.com/Nirvan66/MiMic"> MiMic</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio_details_area p_120" style="padding-top: 50px;">
+            <div class="container">
+                <h4 style="color: #222222; margin-bottom:40px; font-size: 30px; text-align: center;">Project Overview</h4>
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Extracted individual character, statement-response pairs from Friends scripts. </h3>
+                        <ul style="list-style: none; float: right; padding-left: 20px;">
+                            <li><img src="img/mimic/rawData.PNG" style="height: 230px;" alt="RAW-DATA"></li>
+                            <li><img src="img/mimic/charachterData.PNG" style="height: 230px; padding-top: 100px;" alt="CHARACHTER_DATA"></li>
+                            <li><img src="img/mimic/genericData.PNG" style="height: 230px; padding-top: 50px;" alt="GENERIC_DATA"></li>
+                        </ul>
+                        <p>TV show characters were chosen as personalities to be mimicked as show’s writers would have developed a strong and identifiable character personality over the span of several seasons. Moreover TV show transcripts are readily available. <a href="https://en.wikipedia.org/wiki/Friends">F.R.I.E.N.D.S</a> was choose as the TV show for its long runtime and as the <a href="https://fangj.github.io/friends/">raw data scripts</a> were readily available. Joey was chosen as the character to study as he has a distinctive personality in the show that can be described as naive, sarcastic, loving, loud and at times misogynistic. The scrips were split up by episodes with each episode having an associated comma-separated values (CSV) file which held its script. Each script indicated the character speaking and the dialog they spoke along with scene descriptions and stage directions.</p>
+
+                        <p style="padding-top: 20px;">Each script was parsed using a python script to extract statement response pairs from each scene. A statement response pair is two dialogs from the script made by two different characters(stater and respondent) the second(response) immediately following the first (statement). All pairs where Joey was the respondent was then collected. This was called the Joey dataset.</p>
+
+                        <p style="padding-top: 20px; padding-bottom: 20px;">As a prerequisite to training a model to mimic Joey’s personality was training a model to sound human in general. To this end the model was pre-trained on an additional dataset of general question and answer pairs. Ideally this would help the model to form more proper English sentence and respond appropriately to questions made by the stater. Around 500 generic data points were used for training . This was called the generic question and answer dataset. 20 percent of each dataset was used as testing data and the remaining was used as training and development data. </p>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Preprocessed and vectorized statement response pairs.</h3>
+                        <ul style="list-style: none; float: right; padding-left: 20px;">
+                            <li><img src="img/mimic/flow.PNG" style="height: 500px; padding-bottom: 10px;" alt="PREPROCESSING_EXAMPLE"></li>
+                        </ul>
+                        <p style="padding-bottom: 5px"> The dialogs were broken into words and punctuation mark. A word here does not have to reference and actual English word but a maximal sequence of characters excluding punctuation marks and white space. Punctuation marks were treated as individual tokens in an attempt to help the model to better understand questions, statements and commands. Numeric data was removed to reduce vocabulary sized and start and end tokens were added responses.</p>
+
+                        <p style="padding-bottom: 5px">To make the above data ingestible for the embedding layer of the model, every word, punctuation mark and tag was mapped to a numeric token. The <a href="https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/text/Tokenizer">Tokenizer</a> consumes the entire corpus to create this mapping which is then applied to every statement and response in the dataset to create a collection of input and output sequence pairs.</p>
+
+                        <p style="padding-bottom: 5px">The next was <a href="https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/sequence/pad_sequences">Padding</a> the tokenized sequences with zeroes so they all have the same size. The input sequences were pre padded while the output was post padded.</p>
+
+                        <p style="padding-bottom: 5px">Next, every token in the sequence had to be given a unique vector representation. This was handle by the <a href="https://keras.io/layers/embeddings/">Embedding Layer</a>. To provide contextual representations of tokens (words, punctuation marks and tags), <a href="https://nlp.stanford.edu/projects/glove/">GloVe 300-dimensional word embeddings</a> were used to initialized the embedding layer weights.</p>
+
+                        <p style="padding-bottom: 5px">Since the model outputs a softmaxed prediction on each token, the next step involved converting output tokens to one-hot vectors. Since the goal of the decoder was to predict the next token given the current token, the tokenized output sequence was shifted to the left by one step before being converted to one-hot vectors.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Built a Encoder Decoder LSTM model using Keras and batch trained on above datasets.</h3>
+                        <p style="padding-bottom: 10px;"> The Encoder and a Decoder LSTM is a <a href="https://keras.io/examples/lstm_seq2seq/">Sequence to Sequence</a> model. Padded input token sequences are converted to a sequence of word embeddings using a <a href="https://keras.io/layers/embeddings/">Embedding Layer</a> as described above. Each of these word vectors are fed to the <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM?version=stable">Encoder long short-term memory (LSTM)</a> one at a time. The encoder LSTM tries to capture the essence of the encoded input sequence in two thought vectors, the output context vector and the hidden state vector. </p>
+                        <p>Both thought vectors are then passed to the <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM?version=stable">Decoder long short-term memory (LSTM)</a>. The decoder LSTM is fed a padded sequence of output word embeddings along with the two thought vectors. The decoder model is trained to use a <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense?version=stable">Dense SoftMax</a> output layer to predict the most likely output word among all words in the vocabulary. </p>
+                        <img src="img/mimic/seq2seqModel.PNG" style="margin-left: auto; margin-right: auto; display: block; height: 450px; padding-top: 10px" alt="SEQ2SEQ">
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Extracted inference model from trained model weights.</h3>
+                        <p>Once the model is trained, an inference encoder and decoder model is created using the trained model weights. The inference encoder model takes in the statement vector and generates two thought vectors, the output context vector and the hidden state vector. The two thought vectors are fed into the inference decoder model along with a sentence start tag. All words predicted by the SoftMax layer are captured until an end tag is generated. </p>
+                        <img src="img/mimic/inference.PNG" style="margin-left: auto; margin-right: auto; display: block; height: 250px; padding-top: 10px" alt="INFERENCE_MODEL">
+
+                    </div>
+                </div>
+
+                
+
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Development was done in Python. Jupyter notebook was used for testing and development. Keras was used to build and train machine learning models. Google Colab GPU infrastructure was used for training.</h3>
+                        <ul style="list-style: none;">
+                            <li><img src="img/curate/python.PNG" style="height: 100px; float: left;" alt=""></li>
+                            <li><img src="img/mimic/jupyter.PNG" style="height: 100px; float: left; padding-left: 10px;" alt=""></li>
+                            <li><img src="img/mimic/keras.PNG" style="height: 100px; float: left; padding-left: 10px;" alt=""></li>
+                            <li><img src="img/mimic/colab.PNG" style="height: 100px; float: left; padding-left: 10px;" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <img src="img/mimic/Mimic_Poster.PNG" style="height: 745px;" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--================End Portfolio Details Area =================-->
+        
+        <!--================Footer Area =================-->
+        
+        <!--================End Footer Area =================-->
+        
+        
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="vendors/isotope/isotope-min.js"></script>
+        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/mail-script.js"></script>
+        <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+        <script src="vendors/counter-up/jquery.counterup.min.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>
