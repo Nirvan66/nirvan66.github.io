@@ -43,7 +43,7 @@
                                 <p>This was a group project for the Machine Learning class at University of Colorado Boulder. In this project we explored the problem of creating a chatbot that could mimic a popular television character’s personality, Joey from Friends. The dataset was extracted directly from the Friends scripts from each season to get statement response pairs for an individual character. <a href="https://keras.io/examples/lstm_seq2seq/">Encoder Decoder LSTM model </a> was built and trained on extracted statement response pairs. An inference model was then created using the trained model weights to respond to any given question.</p>
                                 <ul class="list">
                                     <li><span>Time period</span>: October 2019 - December 2019</li>
-                                    <li><span>Project Type</span>: Group class project (CSCI 5622)</li>
+                                    <li><span>Project Type</span>: Class group project (CSCI 5622)</li>
                                     <li><span>Documentation</span>:  <a href="https://drive.google.com/file/d/1igkzCGROPTibeqv5idRQdPgQNqqC2_-u/view?usp=sharing"> Mimic: Character Based Chatbot</a></li>
                                     <li><span>Github</span>:  <a href="https://github.com/Nirvan66/MiMic"> MiMic</a></li>
                                 </ul>
@@ -76,7 +76,7 @@
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
                         <h3 style="" class="mb-30 title_color">Preprocessed and vectorized statement response pairs.</h3>
                         <ul style="list-style: none; float: right; padding-left: 20px;">
-                            <li><img src="img/mimic/flow.PNG" style="height: 500px; padding-bottom: 10px;" alt="PREPROCESSING_EXAMPLE"></li>
+                            <li><img src="img/mimic/flow.png" style="height: 500px; padding-bottom: 10px;" alt="PREPROCESSING_EXAMPLE"></li>
                         </ul>
                         <p style="padding-bottom: 5px"> The dialogs were broken into words and punctuation mark. A word here does not have to reference and actual English word but a maximal sequence of characters excluding punctuation marks and white space. Punctuation marks were treated as individual tokens in an attempt to help the model to better understand questions, statements and commands. Numeric data was removed to reduce vocabulary sized and start and end tokens were added responses.</p>
 
@@ -95,7 +95,7 @@
                         <h3 style="" class="mb-30 title_color">Built a Encoder Decoder LSTM model using Keras and batch trained on above datasets.</h3>
                         <p style="padding-bottom: 10px;"> The Encoder and a Decoder LSTM is a <a href="https://keras.io/examples/lstm_seq2seq/">Sequence to Sequence</a> model. Padded input token sequences are converted to a sequence of word embeddings using a <a href="https://keras.io/layers/embeddings/">Embedding Layer</a> as described above. Each of these word vectors are fed to the <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM?version=stable">Encoder long short-term memory (LSTM)</a> one at a time. The encoder LSTM tries to capture the essence of the encoded input sequence in two thought vectors, the output context vector and the hidden state vector. </p>
                         <p>Both thought vectors are then passed to the <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM?version=stable">Decoder long short-term memory (LSTM)</a>. The decoder LSTM is fed a padded sequence of output word embeddings along with the two thought vectors. The decoder model is trained to use a <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense?version=stable">Dense SoftMax</a> output layer to predict the most likely output word among all words in the vocabulary. </p>
-                        <img src="img/mimic/seq2seqModel.PNG" style="margin-left: auto; margin-right: auto; display: block; height: 450px; padding-top: 10px" alt="SEQ2SEQ">
+                        <img src="img/mimic/seq2seqModel.png" style="margin-left: auto; margin-right: auto; display: block; height: 450px; padding-top: 10px" alt="SEQ2SEQ">
                     </div>
                 </div>
 
@@ -103,7 +103,7 @@
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
                         <h3 style="" class="mb-30 title_color">Extracted inference model from trained model weights.</h3>
                         <p>Once the model is trained, an inference encoder and decoder model is created using the trained model weights. The inference encoder model takes in the statement vector and generates two thought vectors, the output context vector and the hidden state vector. The two thought vectors are fed into the inference decoder model along with a sentence start tag. All words predicted by the SoftMax layer are captured until an end tag is generated. </p>
-                        <img src="img/mimic/inference.PNG" style="margin-left: auto; margin-right: auto; display: block; height: 250px; padding-top: 10px" alt="INFERENCE_MODEL">
+                        <img src="img/mimic/inference.png" style="margin-left: auto; margin-right: auto; display: block; height: 250px; padding-top: 10px" alt="INFERENCE_MODEL">
 
                     </div>
                 </div>
@@ -115,17 +115,17 @@
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
                         <h3 style="" class="mb-30 title_color">Development was done in Python. Jupyter notebook was used for testing and development. Keras was used to build and train machine learning models. Google Colab GPU infrastructure was used for training.</h3>
                         <ul style="list-style: none;">
-                            <li><img src="img/curate/python.PNG" style="height: 100px; float: left;" alt=""></li>
-                            <li><img src="img/mimic/jupyter.PNG" style="height: 100px; float: left; padding-left: 10px;" alt=""></li>
-                            <li><img src="img/mimic/keras.PNG" style="height: 100px; float: left; padding-left: 10px;" alt=""></li>
-                            <li><img src="img/mimic/colab.PNG" style="height: 100px; float: left; padding-left: 10px;" alt=""></li>
+                            <li><img src="img/curate/python.png" style="height: 100px; float: left;" alt=""></li>
+                            <li><img src="img/mimic/jupyter.png" style="height: 100px; float: left; padding-left: 10px;" alt=""></li>
+                            <li><img src="img/mimic/keras.png" style="height: 100px; float: left; padding-left: 10px;" alt=""></li>
+                            <li><img src="img/mimic/colab.png" style="height: 100px; float: left; padding-left: 10px;" alt=""></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
                     <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
-                        <img src="img/mimic/Mimic_Poster.PNG" style="height: 745px;" alt="">
+                        <img src="img/mimic/Mimic_Poster.png" style="height: 745px;" alt="">
                     </div>
                 </div>
 
