@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/log.png" type="image/png">
+        <title>GeoGuessr AI</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+        
+        <!--================Header Menu Area =================-->
+        <!--================Header Menu Area =================-->
+        
+        <!--================Home Banner Area =================-->
+
+        <!--================End Home Banner Area =================-->
+        
+        <!--================Portfolio Details Area =================-->
+        <section class="portfolio_details_area p_120"  style="background: #f9f9ff; padding-bottom: 50px;">
+            <div class="container">
+                <div class="portfolio_details_inner">
+                    <div class="row">
+                        <img class="img-fluid" src="img/geoguessrai/location.jpg" alt="WM" style="height: 400px; padding-left: 30px;">
+                        <!-- <div class="left_img"">
+                            <img class="img-fluid" src="img/iotBuoy/poster.png" alt="WM" style="height: 373px; padding-right: 30px;">
+                        </div> -->
+                        <div class="col-md-6">
+                            <div style="padding-left: 0px;" class="portfolio_right_text">
+                                <h4>GeoGuessr AI: Image based geo-location</h4>
+                                <p> This project was done for the <a href="https://www.colorado.edu/cs/current-students/courses/course-syllabi/csci-5922-neural-networks-and-deep-learning">Neural Networks and Deep Learning </a> at University of Colorado Boulder. Geolocation is the estimation of real-world geographic location using location based data. The motivation for this project came form the game called <a href="https://www.geoguessr.com/">GeoGuessr</a>, where users are presented with the Google street view of a location and asked to predict the location as best as they can. A custom CNN/LSTM neural network was used to accomplish the task of image based GeoLocation using artificial intelligence.</p>
+                                <ul class="list">
+                                    <li><span>Time period</span>: March 2020 - May 2020</li>
+                                    <li><span>Project Type</span>: Class project (CSCI 5922)</li>
+                                    <li><span>Documentation</span>:  <a href="https://github.com/Nirvan66/geoguessrLSTM/blob/master/documentation/CSCI5922_ProjectReport.pdf"> GeoGuessr AI: Image based geo-location </a></li>
+                                    <li><span>Github</span>:  <a href="https://github.com/Nirvan66/geoguessrLSTM"> GeoGuessr AI</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio_details_area p_120" style="padding-top: 50px;">
+            <div class="container">
+                <h4 style="color: #222222; margin-bottom:40px; font-size: 30px; text-align: center;">Project Overview</h4>
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Split the US mainland map into grids.</h3>
+                        <ul style="list-style: none; float: right; padding-left: 20px;">
+                            <li><img src="img/geoguessrai/map.png" style="height: 230px;" alt="US-SPLIT"></li>
+                        </ul>
+                        <p>The shape file of the US provided by the <a href="{https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">United States Census Bureau</a> was used. The shapefile coordinates were converted into polygons and the polygon for mainland USA was extracted. <a href="https://pypi.org/project/Shapely/">Shapely</a> was used for all geometry related tasks. For this project, we focused only on the mainland boundaries.  A mesh of square boxes were overlayed on the USA polygon and the squares were clipped at the polygon boundaries to create grids of the US polygon. Each grid had a maximum area of 4 sq. units totaling 138.265 sq units, with the grids at borders being smaller. Smaller grids (less that 0.1 times area of the largest grids) were combine with the neighboring grids to avoid some grids having no data. This process resulted in 243 grids forming the mainland US.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Scraped Google street view data from multiple locations in each grid. </h3>
+                        <p style="padding-top: 20px;">Three images were collected per location for 40 locations per grid using the <a href="https://developers.google.com/maps/documentation/streetview/intro">Google Street View static API</a>. Each of the 3 images represented headings of 0 degrees, 90 degrees and 180 degrees of a particular location. The 243 grids thus resulted in 9720 location data points and 29160 images. Each image is of 30 KB resulting in 0.8 GB of data. The price of each image was $0.007 totaling $204</p>
+
+                        <p style="padding-top: 20px; padding-bottom: 20px;">Images under a given lat/long were stored in the folder: "grid-number+latitude,longitude" and the images in them were stored under the filename: "number-image-date.jpg". 3 images for the lat/long 42.77, -124.06 were for example stored in the filepath: "dataCombined/0+42.775957,-124.0667758/0-2009-07.jpg". The 9720 data points that collected were split into 8748 training and 972 testing points. About 90 percent of the data was reserved for training and 10 percent for testing.</p>
+                        <img src="img/geoguessrai/perLocation.png" style="height: 190px;" alt="Location">
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Built and trained two custom CNN/LSTM using Keras</h3>
+                        <ul style="list-style: none; float: right; padding-left: 20px;">
+                            <li><img src="img/geoguessrai/lstm.png" style="height: 270px; padding-top: 30px" alt="LSTM/CNN"></li>
+                        </ul>
+                        <p style="padding-top: 20px;">The input images were loaded and converted to numpy arrays using the tf.keras.preprocessing.image.loadimg function. The array was made up of rgb values and had the following shape (300, 600, 3). Since the input consists of three such images, the shape of each training input turned into $(3, 300, 600, 3)$. The model used a soft-maxed output for prediction. Therefore for training, the grid numbers corresponding to given input image vector were converted to one hot vectors. This was done using the $tf.keras.utils.tocategorical$ function. The one hot output vector had a shape of $(243,)$. Two models were trained to compare the performance. The first model had a <a href="https://arxiv.org/pdf/1512.03385.pdf">ResNet CNN</a> whose weights were frozen during training connected to a trainable <a href="https://en.wikipedia.org/wiki/Long_short-term_memory">LSTM</a> to process the sequence of three images at a time. The next model had a trainable CNN connected to an LSTM. The models were trained in batches of 300 input vectors using <a href="https://colab.research.google.com/notebooks/basic_features_overview.ipynb">Google Colab GPUs</a>.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Ran predictions and scored models on test dataset.</h3>
+                        <ul style="list-style: none; float: right; padding-left: 20px;">
+                            <li><img src="img/geoguessrai/gmaps.png" style="height: 270px;  padding-top: 20px" alt="GMAPS"></li>
+                            <li><img src="img/geoguessrai/preds.png" style="height: 320px; padding-top: 80px" alt="SCORES"></li>
+                        </ul>
+                        <p>Python <a href="https://pypi.org/project/googlemaps/1.0.2/">google maps API gmaps</a> was used to visualize a single soft-maxed prediction across all grids. The opacity of each grid polygon is set to the weight of that index in the array of soft-maxed prediction probabilities. As seen in the figure different opacity of reds scaled between values of 0 to 1 according to prediction confidence. The actual location grid is denoted by a green point and the predicted grid (grid with the highest score) a yellow point. The distance between these points is calculated using <a href="https://en.wikipedia.org/wiki/Haversine_formula">haversine distance</a>. This distance is used to draw a line between the start and end points which is seen in the figure as the blue line. The haversine distance between predicted and actual locations were calculated for the entire test set were calculated and the average was taken to get a score for the model. The score represents the average distance in miles the model was wrong by. The difference in predictions scores between the two models are shown.</p>
+                        <p style="padding-top: 20px;"> The similarity in street view images across different parts of mainland united states, could be one of the reason for our model's poor performance. The was a reduction in error (distance) while training the model for 30 epochs on just 300 images. Insted of using just street view images, diversity of images could be improved by adding prominent landmarks, features unique to a given grid for future work. Another noteworthy fact is that human players of the game geoguessr are allowed to walk around (specific number of steps) using google street view. If the model was allowed to do the same and collected data as a larger stream of images per location, there could be a performance improvement with the model learning more about a location just like a human player.</p>
+                    </div>
+                </div>
+
+
+                
+
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Development was done in Python. Jupyter notebook was used for testing and development. Keras was used to build and train machine learning models. Google Colab GPU infrastructure was used for training.</h3>
+                        <ul style="list-style: none;">
+                            <li><img src="img/curate/python.png" style="height: 100px; float: left;" alt=""></li>
+                            <li><img src="img/mimic/jupyter.png" style="height: 100px; float: left; padding-left: 10px;" alt=""></li>
+                            <li><img src="img/mimic/keras.png" style="height: 100px; float: left; padding-left: 10px;" alt=""></li>
+                            <li><img src="img/mimic/colab.png" style="height: 100px; float: left; padding-left: 10px;" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--================End Portfolio Details Area =================-->
+        
+        <!--================Footer Area =================-->
+        
+        <!--================End Footer Area =================-->
+        
+        
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="vendors/isotope/isotope-min.js"></script>
+        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/mail-script.js"></script>
+        <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+        <script src="vendors/counter-up/jquery.counterup.min.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>
