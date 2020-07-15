@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/log.png" type="image/png">
+        <title>DeRis</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+        
+        <!--================Header Menu Area =================-->
+        <!--================Header Menu Area =================-->
+        
+        <!--================Home Banner Area =================-->
+
+        <!--================End Home Banner Area =================-->
+        
+        <!--================Portfolio Details Area =================-->
+        <section class="portfolio_details_area p_120"  style="background: #f9f9ff; padding-bottom: 50px;">
+            <div class="container">
+                <div class="portfolio_details_inner">
+                    <div class="row">
+                        <img class="img-fluid" src="img/deris/deris2.jpg" alt="WM" style="height: 450px; padding-left: 30px;">
+                        <!-- <div class="left_img"">
+                            <img class="img-fluid" src="img/iotBuoy/poster.png" alt="WM" style="height: 373px; padding-right: 30px;">
+                        </div> -->
+                        <div class="col-md-6">
+                            <div style="padding-left: 0px;" class="portfolio_right_text">
+                                <h4>DeRis: Decentralized Ride Sharing</h4>
+                                <p> This project was done for the <a href="https://catalog-archive.colorado.edu/2016-17/node/177215.html">Distributed Systems </a> at University of Colorado Boulder. Popular ride sharing systems use a centralized structure where a single entity orchestrates interactions between riders and drivers. This leads to a single point of failure. As a consequence, this centralized structure raises concerns about data privacy and is vulnerable to attack from malicious users. Furthermore, as the central entity takes a certain cut of the profit from drivers who bear the brunt of the costs of gas and vehicle wear and tear. The propose solution to this problem is DeRiS, (De)centralized (Ri)de (S)haring. DeRiS is a decentralized ride sharing solution based on the Ethereum Blockchain.</p>
+                                <ul class="list">
+                                    <li><span>Time period</span>: March 2020 - May 2020</li>
+                                    <li><span>Project Type</span>: Class project (CSCI 5673)</li>
+                                    <li><span>Documentation</span>:  <a href="https://github.com/Nirvan66/DeRiS/blob/master/documentation/CSCI5673_Report_Two.pdf"> DeRis: Decentralized Ride Sharing</a></li>
+                                    <li><span>Github</span>:  <a href="https://github.com/Nirvan66/DeRiS"> DeRis</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio_details_area p_120" style="padding-top: 50px;">
+            <div class="container">
+                <h4 style="color: #222222; margin-bottom:40px; font-size: 30px; text-align: center;">Project Overview</h4>
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">The Ethereum smart contract</h3>
+                        <p style="padding-bottom: 10px;">The open-source and well documented ethereum blockchain is ideal for development given the large community it has and widespread support. Many existing tools and frameworks for development already exist, making the overall development process cleaner and easier. The Ethereum blockchain works on smart contracts which are essentially pieces of code that execute transactions between the rider and the driver. The smart contract is meant to be computationally light as ever operation on the smart contract incurs a mining cost. This leads to offloading most of the computationally intensive tasks to the user device. At a high level a smart contract has to handle the following user interactions: Rider post the start and end location of the trip along with trip costs, the rider request is added to the blockchain, the Driver can now view all ride requests, the driver selects preferred rider, the rider pays the driver as the trip is completed.</p>
+                        <img src="img/deris/programFlow.png" style="margin-left: auto; margin-right: auto; display: block; height: 500px;" alt="PROGRAM-FLOW">
+                    </div>
+                </div>
+                
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Using the application as a Driver</h3>
+                        <p> A user logging in as a driver uses his/her ethereum address to do so. The application passes this information to the blockchain and the driver is put in the logical queue of users waiting for a rider.
+                        Cancellation at this time does not cost anything as the driver has not yet committed to a trip.The drivers application then queries the blockchain to get the list of active riders. The blockchain does this by finding all the users that are currently active riders who are not yet paired with a driver and asynchronously emits the rider number along with the riders pickup and drop off location to the driver application that is listening to this asynchronously. The application code subscribes to the event and is asynchronously updated every time a rider detail is emitted. This way the driver application can asynchronously collect and update the list of active waiting riders.</p>
+
+                        <p style="padding-top: 10px;">Once the driver picks a rider on the application, a smart contract function is called to update the blockchain of this selection. Only the rider number is used to identify riders thereby never disclosing the rider account address. The driver also send the approximate time he/she will take to arrive at the rider pickup location. The blockchain has checks to see if the caller is a valid user and if the caller is currently an active driver who is not yet matched. The blockchain uses an event to inform a rider of being picked and the time the driver has agreed to arrive at the rider pickup location. Canceling the trip after accepting and before arriving costs the driver 10 percent of the trip cost. If the driver arrives at the location and the rider is not there, the driver can cancel and the rider is charged a fee for not showing up.</p>
+
+                        <p style="padding-top: 10px;">After a driver has picked a rider, he/she has to arrive in the agreed time to the pickup location to not be penalized. If the driver does not arrive in the time frame he/she looses 10 percent of the trip cost which goes to the riders account. This is done to prevent bad actors from overloading the system with trips and incentives drivers to commit to trips. When the driver is in a 0.2 mile radius of the driver, he/she calls a smart contract function to inform the rider (update the blockchain) of arrival. The driver sends his/her current location to this function on the blockchain. The function checks if the driver is actual 0.2 miles away from rider and only accepts arrival if this condition is met. As solidity does not support floating point arithmetic, small angle approximation squared euclidean distance is used to estimate distance. If the driver can successfully prove arrival location inside 0.2 miles of pickup location and has arrived inside pickup time, the blochain uses an event to asynchronously inform the rider of the drivers arrival.</p>
+
+                        <p style="padding-top: 10px; padding-bottom: 10px;">The driver is paid as the trip is completed by the rider one portion at at time. The blockchain uses an event to asynchronously inform the driver of the amount of money received from the rider for the amount of trip completed. There is no charge for cancelling a trip in progress but all payments from rider stops and the driver is only paid for amount of the trip completed. Once the trip is completed (all the payment is completed) both users are informed of trip completion by an asynchronous event.</p>
+                        <ul style="list-style: none;">
+                            <li><img src="img/deris/driverPage.png" style="height: 275px; float: left;" alt=""></li>
+                            <li><img src="img/deris/driverProgressPage.png" style="height: 275px; float: left; padding-left: 10px;" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Using the application as a Rider</h3>
+                        <p>A user logging in as a rider uses his/her ethereum address to do so. The riders pickup and drop off location along with the estimated cost of the trip is also passed to the blockchain by calling a smart contract function.The rider keeps waiting until picked by a driver. When a rider is picked by a driver, an asynchronous event informs the rider of being picked. The event also informs the rider of the time taken for the driver to reach the pickup location. If the rider cancels the trip before the agreed upon arrival time, the rider is charge a fee of 10 percent of the trip cost. If the driver does not arrive in the agreed upon time, there is no fee charged for cancellation and the driver pays the rider for not showing up on time.</p>
+                        <p style="padding-top: 10px; padding-bottom: 10px;">Once the rider has been picked, he/she waits for the driver to arrive. The driver's arrival within 0.2 miles of the pickup location is informed to the rider by the blockchain using an asynchronous event. Cancelling the trip once the driver has arrived or the rider not showing up to pickup location costs the rider 10 percent of the trip cost. As parts of the trip are completed, the rider pays the driver for the portion of the trip that is completed. The blockchain checks if the amount already paid is less than or equal to the amount owed preventing overpayment. There is no charge for cancelling a trip in progress but all payments from rider stops and the driver is only paid for amount of the trip already completed. Once the trip is completed (all the payment is completed) the rider is informed of trip completion by the blockchain using an asynchronous event.</p>
+                        <ul style="list-style: none;">
+                            <li><img src="img/deris/riderPage.png" style="height: 267px; float: left;" alt="RIDER-PAGE"></li>
+                            <li><img src="img/deris/riderProgressPage.png" style="height: 275px; float: left; padding-left: 10px;" alt="RIDER-PROGRESS"></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">System Evaluation</h3>
+                        <ul style="list-style: none; float: right; padding-left: 20px;">
+                            <li><img src="img/deris/driverCosts.png" style="height: 200px;" alt="DRIVE-COSTS"></li>
+                            <li><img src="img/deris/riderCosts.png" style="height: 200px; padding-top: 10px" alt="RIDE-COSTS"></li>
+                        </ul>
+                        <p>The blockchain can be evaluated on the transaction cost of each function. The transaction cost is the amount it cost to execute a segment of code on a mining device on the blockchain. While functions that just return values don't cost anything, functions that set/change contract data or execute payment cost gas to mine. All functions in the Deris smart contract incur a transaction cost. The graphs shows various transaction costs for the rider and driver functions. While the numbers look high, it is important to note that they are in wei. One either is 10 to the power 18 wei, making each transaction cost quite small. That being said, the driver and rider request have a larger amount of transaction cost compared to the other functions. This is because these functions are used to set the initial state of the users.</p>
+                        <p style="padding-top: 10px; padding-bottom: 10px;">Another way to evaluate the blockchain will be the time it takes between the application call to the blockchain to the time the blocakchain completes execution of the function. This seems to be the bottleneck for the application as the ethereum blockchain take a long time to run each operation compared to a traditional client server model. From the figure we see that the ride and drive request functions take the most time to execute. As mention before the functions are used to set user states and thus have to do a lot of data access operations that inevitably take more time.</p>
+                        <ul style="list-style: none;">
+                            <li><img src="img/deris/driverTimes.png" style="height: 210px; float: left;" alt="DRIVE-TIME"></li>
+                            <li><img src="img/deris/riderTimes.png" style="height: 210px; float: left; padding-left: 50px;" alt="RIDE-TIME"></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                
+
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                         <ul style="list-style: none;">
+                            <li">
+                                <h3 style="" class="mb-30 title_color">The backend decentralized portion of the application used the Ethereum framework with a smart contract written in solidity used to handle user interaction on the blockchain.</h3>
+                                <ul style="list-style: none;">
+                                    <li><img src="img/deris/ethereum.png" style="height: 120px; float: left;" alt=""></li>
+                                    <li><img src="img/deris/solidity.png" style="height: 120px; padding-left: 30px;" alt=""></li>
+                                </ul>
+                            </li>
+
+                            <li style="padding-top: 30px;">
+                                <h3 style="" class="mb-30 title_color">Used ganache to simulate test blockchain network to deploy the smart contract. Used web3.js to communicate with the blockchain.</h3>
+                                <ul style="list-style: none; padding-left: 0px">
+                                    <li><img src="img/deris/ganache.png" style="height: 100px; float: left;" alt=""></li>
+                                    <li><img src="img/deris/js.png" style="height: 100px; padding-left: 30px;" alt=""></li>
+                                </ul>
+                            </li>
+                            <li style="padding-top: 30px;">
+                                <h3 style="" class="mb-30 title_color">The fron-end application was built in react</h3>
+                                <img src="img/deris/react.png" style="height: 150px;" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--================End Portfolio Details Area =================-->
+        
+        <!--================Footer Area =================-->
+        
+        <!--================End Footer Area =================-->
+        
+        
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="vendors/isotope/isotope-min.js"></script>
+        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/mail-script.js"></script>
+        <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+        <script src="vendors/counter-up/jquery.counterup.min.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>
