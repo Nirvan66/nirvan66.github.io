@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/log.png" type="image/png">
+        <title>ESRI</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+        
+        <!--================Header Menu Area =================-->
+        <!--================Header Menu Area =================-->
+        
+        <!--================Home Banner Area =================-->
+
+        <!--================End Home Banner Area =================-->
+        
+        <!--================Portfolio Details Area =================-->
+        <section class="portfolio_details_area p_120"  style="background: #f9f9ff; padding-bottom: 50px;">
+            <div class="container">
+                <div class="portfolio_details_inner">
+                    <div class="row">
+                        <div class="left_img">
+                            <img class="img-fluid" src="img/esri/Esri-logo2.jpg" alt="ESRI" style="height: 350px; padding-right: 30px;">
+                        </div>
+                        <div class="col-md-6">
+                            <div style="padding-left: 0px;" class="portfolio_right_text">
+                                <h4>Esri - Geographic information system company</h4>
+                                <p><a href="https://www.esri.com/en-us/home">Esri </a>is an international supplier of geographic information system software, web GIS and geodatabase management applications. During my summer internship, I worked for the <a href="https://www.esri.com/en-us/arcgis/products/arcgis-business-analyst/overview">Business Analyst Team</a>. My summer project on the team involved finding a way to improve the data browser that presented a plethora of available datasets to the user which could be overwhelming at times. This problem was solved by building a framework to recommend or order the list of datasets based on historical usage statistics.</p>
+                                <ul class="list">
+                                    <li><span>Time period</span>:  June 2020 - August 2020</li>
+                                    <li><span>Location</span>:  Redlands, CA </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio_details_area p_120" style="padding-top: 50px;">
+            <div class="container">
+                <h4 style="color: #222222; margin-bottom:40px; font-size: 30px; text-align: center;">Software Engineering Intern</h4>
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Data Browser: A problem of plenty</h3>
+                        <ul style="list-style: none; float: right; padding-left: 20px">
+                            <li><img src="img/esri/databrowser1.png" style="height: 220px;" alt="DATABROWSER"></li>
+                            <li><img src="img/esri/databrowser2.png" style="height: 310px; padding-top: 50px;" alt="DATABROWSER"></li>
+                        </ul>
+                        <p>Users of the business analyst website are able to enrich a certain area with available datasets also called analysis variables. This essentially means displaying statistical information about an area. For example a user can choose to enrich the Boulder county area with the population dataset which shows the population densities of different parts of the county. The data browser is used to present the list of available datasets that can be used to enrich an area. The data browser first presents the user with a list of categories of datasets.</p>
+
+                        <p style="padding-top: 80px;">Once the user picks a category, he/she is navigated to the list of available datasets for that category. Since each category contains a plethora of datasets, sifting through the list can be daunting task if the user does not already know what dataset he/she is looking for. This is akin to a Netflix user being overwhelmed by vast expanse of movies on the Netflix home page. Without some sort of recommendation, the user will have a bad experience trying to sift through a lot of movies they are not interested in. This problem of plenty arises in the data browser and the summer internship delt with trying to solve this problem using previous collected user - analysis variable (dataset) usage data.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Parsed 128GB of request logs in 20 minutes using map-reduce</h3>
+                        <p style="padding-top: 10px;">A month of user - analysis variable (dataset) usage logs consisted of 128GB of data. The logs consisted of user requests to the REST API server. Each log contained a unique user hash code and the list of variable the user used for enrichment in a single request along with a plethora of other information about that REST API request. The logs were parsed to extract required information and relevant statistics were collected regarding analysis variable usage. Since the size of request of logs were large an efficiently framework had to be designed to efficiently collect statistics. A map-reduce parallel processing framework was designed to collect required stats which greatly improved efficiency by reducing processing time. 128GB of log files were parsed using the map-reduce framework in less than 20 minutes on a single machine. Using a distributed framework could further reduce this time in the future. The graph below shows on of the stats collected. The graph shows the top 5 analysis variables (datasets) used per category based on raw usage counts from the logs. These analysis variable (dataset) counts were normalized between 0-100 per category to give popularity scores for all variables in a category based on usage across all users. These scores were used to sort analysis variables (dataset) list to better represent them in the data browser.</p>
+                        <img src="img/esri/counts.png" style="margin-left: auto; margin-right: auto; display: block; height: 450px; padding-top: 20px;" alt="COUNT-GRAPH">
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Built a recommender system to make custom recommendations per user.</h3>
+                        <p>While the previous step created popularity scores across all users, this step created recommendations tailored to a specific user based on their usage history. This was done by first collecting user analysis variables pairs, along with the usage counts for a particular analysis variable for a particular user. The usage counts were normalized per user between 0-5 to create recommendation scores for a analysis variable given a user. The task now was to build a model that uses the user analysis variables scores that are known to predict score for user analysis variable pairs that we don't know. This was done using a neural network. The network was fed user - analysis variable pairs and was trained on known recommendation scores. The first layer of the model consists of unique embeddings for each unique analysis variable and each unique user. These embeddings are learned by the model during training and each embedding mathematically represents a single analysis variable or a single user based on what the model has learned from the data. This technique essentially uses a neural network to factorized the recommendation matrix like the commonly used <a href="https://en.wikipedia.org/wiki/Singular_value_decomposition">Single Value Decomposition </a> does.</p>
+                        <img src="img/esri/neuralNet.png" style="margin-left: auto; margin-right: auto; display: block; height: 250px; padding-top: 20px;" alt="NEURALNET">
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Tested model based on individual user recommendations.</h3>
+                        <ul style="list-style: none; float: right; padding-left: 20px">
+                            <li><img src="img/esri/testing1.png" style="height: 700px;" alt="TOP50USERS"></li>
+                        </ul>
+                        <p>The data set of user - analysis variable pairs along with know recommendation score was split per user into training and test set with 95% of data used for training and the remaining 5% used for testing per user. This lead to the collection of training and test sets that contained information about every user in both sets. Once the model was trained, a simple MSE test was run to evaluate the model on testing data which lead to a score of 0.86 which is comparable to the baseline score of 0.74 on the benchmark movie recommendations dataset.</p>
+                        <p style="padding-top: 10px;">To better evaluate the model, individual user recommendations were tested. To do this, testing recommendation scores were converted to binary values using a threshold. As an example, for recommendation scores between 0-5, if a threshold of 2.8 was set, a score of 2.5 would be a 0 and a score 3.8 would be a 1. The same technique was used to convert the predicted recommendation scores for the test user-analysis variable data to binary values converting testing to a binary problem. Using this it could be said if a model made mistake in predicting a testing data point or if the model was correct. For example, with a threshold of 2.8, if the model predicts a 3.8 (or a 1) and the actual recommendation score is 4.1 (or a 1) the model has correctly predicted the testing point. Using this the graph on the right was created with the green showing the incorrect predictions and the red showing incorrect predictions for test data per user. The users are sorted by incorrect predictions, with the user having the most incorrect predictions first. The top 50 worst performing users as per test data is shown in the graph on the right. From the graph it can be seen that by the 50th user, the number of mistakes have gone down to two with every user after this having less mistakes than 2. Since each user had different amount of usage the testing data per user was uneven. Normalizing based on amount of testing data per user could be a future improvement.</p>
+                        <p style="padding-top: 10px;">As all users cannot be shown in a single graph, the graph below shows a combination of testing results for all users. The graph below shows how the model makes zero mistakes for most users (3734) and as the number of users go up the number of mistakes go down. This was an indicator of the model performing well.</p>
+
+                        <img src="img/esri/testing2.png" style="margin-left: auto; margin-right: auto; display: block; height: 350px; padding-top: 20px;" alt="ALLUSERS">
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <h3 style="" class="mb-30 title_color">Visualized the model using user embeddings</h3>
+                        <p>The first layer of the model consists of unique embeddings for each unique analysis variable and each unique user. These embeddings are learned by the model during training and each embedding mathematically represents a single analysis variable or a single user based on what the model has learned from the data. To better understand the what the model had learned, the user embedding were extracted and clustered using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html">K-means clustering</a>. By creating clusters of users, a better understanding of what users the model thought was similar could be gained. This is analogues to a model learning that users who like horror movies should have similar vectors and hence should be in a single cluster. Since we already know what analysis variables each user used and how much they used it form the usage logs, each user cluster was converted to analysis variable. This was done by finding counts of all analysis variables used by a users in a cluster and summing these with counts of analysis variables of other users in that cluster to get variable usage counts for a user cluster. This is analogues to collecting the movies watched by similar users in the movie example. In the movie example one would like to see a single user cluster have names of just horror movies. This is what was observed in case of the analysis variables. Taking a closer look at cluster 10 in the figure below it can be seen that all the variables have to do with crime data. This means model has successfully learned similar vectors for users who like crime data proving the model using visualization.</p>
+                        <img src="img/esri/cluster.PNG" style="margin-left: auto; margin-right: auto; display: block; height: 750px; padding-top: 20px;" alt="ALLUSERS">
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="feature_item" style = "background: #eee; border-left: 10px solid #8490ff; overflow: auto;">
+                        <ul style="list-style: none;">
+                            <li>
+                                <h3 style="" class="mb-30 title_color">The code for parsing logs and building the machine learning framework was written in Python 3.</h3>
+                                <img src="img/curate/python.png" style="height: 130px;" alt="">
+                            </li>
+                            <li style="padding-top: 30px;">
+                                <h3 style="" class="mb-30 title_color">AWS S3 was used to store and access user data.</h3>
+                                <img src="img/curate/aws.png" style="height: 100px;" alt="">
+                            </li>
+                            <li style="padding-top: 30px;">
+                                <h3 style="" class="mb-30 title_color">Scikit-learn, and Keras were used in building the machine learning framework.</h3>
+                                <ul style="list-style: none;">
+                                    <li><img src="img/curate/scikit.png" style="height: 80px; float: left;" alt=""></li>
+                                    <li><img src="img/mimic/keras.png" style="height: 80px; padding-left: 30px;" alt=""></li>
+                                </ul>
+                            </li>
+                            <li style="padding-top: 30px;">
+                                <h3 style="" class="mb-30 title_color">Pandas, numpy and matplotlib were heavily used for analyzing data.</h3>
+                                <ul style="list-style: none;">
+                                    <li><img src="img/esri/pandas.png" style="height: 100px; float: left;" alt=""></li>
+                                    <li><img src="img/esri/numpy.png" style="height: 80px; float: left; padding-left: 30px;" alt=""></li>
+                                    <li><img src="img/esri/matplot.png" style="height: 80px; padding-left: 30px;" alt=""></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--================End Portfolio Details Area =================-->
+        
+        <!--================Footer Area =================-->
+        
+        <!--================End Footer Area =================-->
+        
+        
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="vendors/isotope/isotope-min.js"></script>
+        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/mail-script.js"></script>
+        <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+        <script src="vendors/counter-up/jquery.counterup.min.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>
